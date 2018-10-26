@@ -29,6 +29,10 @@ git anything -v
 
 git remote -v
 
+git remote set-url origin <address>
+
+sets the origin to a different remote repository address
+
 Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
 On branch master
 Your branch is up to date with 'origin/master'.

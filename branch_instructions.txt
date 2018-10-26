@@ -1,0 +1,6 @@
+$ git push --delete <remote_name> <branch_name>
+$ git branch -d <branch_name>
+
+By remote name, it means the name of the remote repository (Github). This is most commonly referred to as origin.
+
+By branch_name, they mean the name of the local repository.

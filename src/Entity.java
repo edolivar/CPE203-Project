@@ -16,8 +16,6 @@ final class Entity
    private int actionPeriod;
    private int animationPeriod;
 
-   //test
-
    private static final Random rand = new Random();
 
    private static final String BLOB_KEY = "blob";

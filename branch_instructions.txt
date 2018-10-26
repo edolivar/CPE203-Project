@@ -27,6 +27,8 @@ git anything -v
 
 -v means verbose
 
+git remote -v
+
 Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
 On branch master
 Your branch is up to date with 'origin/master'.

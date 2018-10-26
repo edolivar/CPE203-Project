@@ -4,3 +4,278 @@ $ git branch -d <branch_name>
 By remote name, it means the name of the remote repository (Github). This is most commonly referred to as origin.
 
 By branch_name, they mean the name of the local repository.
+
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git fetch origin
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git fetch origin -v
+From https://github.com/ANGELLOPARR/CSC203-Project
+ = [up to date]      master     -> origin/master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git pull
+Already up to date.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch testBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout testBranch
+Switched to branch 'testBranch'
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+  master
+* testBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	out
+README.md		src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ vim testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin testBranch
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'testBranch' on GitHub by visiting:
+remote:      https://github.com/ANGELLOPARR/CSC203-Project/pull/new/testBranch
+remote:
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ * [new branch]      testBranch -> testBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	out			testBranchText.txt
+README.md		src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git commit -m "add test file"
+[testBranch b94f44a] add test file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin testBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 304 bytes | 304.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+1   testing that branching works.
+   c1ad125..b94f44a  testBranch -> testBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git merge testBranch
+Updating c1ad125..b94f44a
+Fast-forward
+ testBranchText.txt | 1 +
+ 1 file changed, 1 insertion(+)
+  5 $ git push --delete <remote_name> <branch_name>
+ create mode 100644 testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch -d testBranch
+Deleted branch testBranch (was b94f44a).
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+   c1ad125..b94f44a  master -> master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete origin testBranch
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ - [deleted]         testBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	out			testBranchText.txt
+README.md		src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ vim testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout -b branch_instructions.txt
+Switched to a new branch 'branch_instructions.txt'
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ vim branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git commit -m "add branch instructions.txt"
+[branch_instructions.txt c2fcc81] add branch instructions.txt
+ 1 file changed, 6 insertions(+)
+ create mode 100644 branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin branch_instructions.txt
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 449 bytes | 449.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch_instructions.txt' on GitHub by visiting:
+remote:      https://github.com/ANGELLOPARR/CSC203-Project/pull/new/branch_instructions.txt
+remote:
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ * [new branch]      branch_instructions.txt -> branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git merge branch_instructions.txt
+Updating b94f44a..c2fcc81
+Fast-forward
+ branch_instructions.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch -d branch_instructions.txt
+Deleted branch branch_instructions.txt (was c2fcc81).
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	branch_instructions.txt	src
+README.md		out			testBranchText.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+   b94f44a..c2fcc81  master -> master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete branch_instructions.txt
+fatal: --delete doesn't make sense without any refs
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+* master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete origin branch_instructions.txt
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ - [deleted]         branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo START HERE
+START HERE
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo
+
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo
+
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo
+
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git fetch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git fetch -v
+From https://github.com/ANGELLOPARR/CSC203-Project
+ = [up to date]      master     -> origin/master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git pull
+Already up to date.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git pull -v
+From https://github.com/ANGELLOPARR/CSC203-Project
+ = [up to date]      master     -> origin/master
+Already up to date.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch thisIsTheNewBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout thisIsTheNewBranch
+Switched to branch 'thisIsTheNewBranch'
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo you can also use "git checkout -b thisIsTheNewBranch" to combine the two above steps
+you can also use git checkout -b thisIsTheNewBranch to combine the two above steps
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+  master
+* thisIsTheNewBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo that was to check what branch we're on
+>
+> q
+> done
+> man ehco
+> man echo
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+> echo
+> cd
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+> cd
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+1   simulating adding a new file to a project on git
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+.git/                    README.md                src/
+.idea/                   branch_instructions.txt  testBranchText.txt
+Project1_IntelliJ.iml    out/
+>
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo that
+that
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo that was to check
+that was to check
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo that was to check what branch we are on
+that was to check what branch we are on
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo we're
+>
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+  master
+* thisIsTheNewBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ vim newFileToBeAdded.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add -A
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add *
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add newFileToBeAdded.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git commit -m "add commit message"
+[thisIsTheNewBranch 976e47e] add commit message
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newFileToBeAdded.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin thisIsTheNewBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 334 bytes | 334.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'thisIsTheNewBranch' on GitHub by visiting:
+remote:      https://github.com/ANGELLOPARR/CSC203-Project/pull/new/thisIsTheNewBranch
+remote:
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ * [new branch]      thisIsTheNewBranch -> thisIsTheNewBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo we have pushed the local branch to the remote repo and made a remote branch
+we have pushed the local branch to the remote repo and made a remote branch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo we are done and now can merge locally
+we are done and now can merge locally
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git merge thisIsTheNewBranch
+Updating c2fcc81..976e47e
+Fast-forward
+ newFileToBeAdded.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newFileToBeAdded.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch -d thisIsTheNewBranch
+Deleted branch thisIsTheNewBranch (was 976e47e).
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+   c2fcc81..976e47e  master -> master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete thisIsTheNewBranch
+fatal: --delete doesn't make sense without any refs
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ echo oops forgot about origin
+oops forgot about origin
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete origin thisIsTheNewBranch
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ - [deleted]         thisIsTheNewBranch
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$

@@ -301,3 +301,74 @@ Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push --delete origin thisIs
 To https://github.com/ANGELLOPARR/CSC203-Project.git
  - [deleted]         thisIsTheNewBranch
 Angellos-MacBook-Pro:Project1_IntelliJ angellop$
+
+
+
+
+
+
+
+
+
+Some useful advice for creating branches and why we do it
+
+If you create a branch and checkout to whatever branch you want, none of the files in your working directory will change.
+As soon as you add files and commit them within a branch, THEN git will revert to snapshots of previous work.
+For example, creating a branch, making a file, and doing nothing won't change anything. If you add and commit that file within the new branch, now only being in that branch will let you see the new file. Master can't see the new file. See below.
+
+
+
+
+
+
+Angellos-MacBook-Pro:newGitTest angellop$ git branch
+* master
+Angellos-MacBook-Pro:newGitTest angellop$ git checkout -b newBranch
+Switched to a new branch 'newBranch'
+Angellos-MacBook-Pro:newGitTest angellop$ vim testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git commit -a -m "test branching"
+On branch newBranch
+Untracked files:
+	testFile.txt
+
+nothing added to commit but untracked files present
+Angellos-MacBook-Pro:newGitTest angellop$ git add testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git commit -m "test branching"
+[newBranch e6c1837] test branching
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git branch
+  master
+* newBranch
+Angellos-MacBook-Pro:newGitTest angellop$ ls
+README.md		hotfix.txt		pullRequest.txt		pulls_and_branches.txt	testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git checkout master
+Switched to branch 'master'
+Angellos-MacBook-Pro:newGitTest angellop$ ls
+README.md		hotfix.txt		pullRequest.txt		pulls_and_branches.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git branch
+* master
+  newBranch
+Angellos-MacBook-Pro:newGitTest angellop$ git merge
+fatal: No remote for the current branch.
+Angellos-MacBook-Pro:newGitTest angellop$ git merge newBranch
+Updating 6a268c1..e6c1837
+Fast-forward
+ testFile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ ls
+README.md		hotfix.txt		pullRequest.txt		pulls_and_branches.txt	testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git branch -d newBranch
+Deleted branch newBranch (was e6c1837).
+Angellos-MacBook-Pro:newGitTest angellop$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 742 bytes | 742.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ANGELLOPARR/newGitTest.git
+   13230d6..e6c1837  master -> master
+Angellos-MacBook-Pro:newGitTest angellop$

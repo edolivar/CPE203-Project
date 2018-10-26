@@ -63,6 +63,10 @@ final class Entity
       this.position = point;
    }
 
+   public List<PImage> getImages() { return this.images; }
+
+   public int getImageIndex() { return this.imageIndex; }
+
 //   public static String getORE_KEY(){
 //      return ORE_KEY;
 //   }

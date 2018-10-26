@@ -56,7 +56,6 @@ public final class VirtualWorld
          createImageColored(TILE_WIDTH, TILE_HEIGHT, DEFAULT_IMAGE_COLOR));
       this.world = new WorldModel(WORLD_ROWS, WORLD_COLS,
          createDefaultBackground(imageStore));
-      System.out.println(WORLD_ROWS + ":::" + WORLD_COLS);
       this.view = new WorldView(VIEW_ROWS, VIEW_COLS, this, world,
          TILE_WIDTH, TILE_HEIGHT);
       this.scheduler = new EventScheduler(timeScale);

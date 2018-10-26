@@ -372,3 +372,179 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/ANGELLOPARR/newGitTest.git
    13230d6..e6c1837  master -> master
 Angellos-MacBook-Pro:newGitTest angellop$
+
+
+
+
+
+
+
+
+
+
+
+Below is an example of mine where I was working in a branch updating a .txt file, and I had added and committed a file, but then had done "git push origin master." Because of I had not created a remote branch, basically nothing happened. I then had to push that branch to the remote repo. I then decided to merge the master with the new branch (only the text file I committed, not the Blacksmith.java file). After that, I git push origin mastere'd and it updated the master branch but kept both branches live. Now I have two branches that are exactly the same, and STILL the Blacksmith java class is not in either of the commits, so everything is kept as it should be.
+
+
+
+
+
+
+
+
+
+
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch added_entity_classes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .idea/workspace.xml
+	modified:   branch_instructions.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	src/Blacksmith.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	branch_instructions.txt	out			testBranchText.txt
+README.md		newFileToBeAdded.txt	src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git add branch_instructions.txt
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git commit -m "update branch instructions"
+[added_entity_classes ed48b9d] update branch instructions
+ 1 file changed, 71 insertions(+)
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin master
+Everything up-to-date
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch added_entity_classes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .idea/workspace.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	src/Blacksmith.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ cd ~/newGitTest/
+Angellos-MacBook-Pro:newGitTest angellop$ ls
+README.md		branching.txt		hotfix.txt		pullRequest.txt		pulls_and_branches.txt	testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	branching.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Angellos-MacBook-Pro:newGitTest angellop$ git add branching.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git commit -m "add branching information"
+[master f108b6e] add branching information
+ 1 file changed, 360 insertions(+)
+ create mode 100644 branching.txt
+Angellos-MacBook-Pro:newGitTest angellop$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.52 KiB | 2.52 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ANGELLOPARR/newGitTest.git
+   e6c1837..f108b6e  master -> master
+Angellos-MacBook-Pro:newGitTest angellop$ ls
+README.md		branching.txt		hotfix.txt		pullRequest.txt		pulls_and_branches.txt	testFile.txt
+Angellos-MacBook-Pro:newGitTest angellop$ cd ~/Documents/CSC203
+Angellos-MacBook-Pro:CSC203 angellop$ ls
+CSC203.iml		Lab00.java		P1_INST			_3			lab01_part3.graphml	testing
+IntelliJ_to_Netbeans	Lab01			Project1		lab00.pdf		lab03
+JUnit-Sample		Lab02			Project1Inst		lab00.py		lab03_cmd
+JUnitSampleSol		Lab02_Part2		Project1_IntelliJ	lab01_Part 1-20180926	project1_cmd
+Lab00			Lab04			TestIntelliJ		lab01_Part 2-20180926	src
+Angellos-MacBook-Pro:CSC203 angellop$ cd Project1_IntelliJ/
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	branch_instructions.txt	out			testBranchText.txt
+README.md		newFileToBeAdded.txt	src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+* added_entity_classes
+  master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout master
+M	.idea/workspace.xml
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ ls
+Project1_IntelliJ.iml	branch_instructions.txt	out			testBranchText.txt
+README.md		newFileToBeAdded.txt	src
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin added_entity_classes
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.05 KiB | 539.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'added_entity_classes' on GitHub by visiting:
+remote:      https://github.com/ANGELLOPARR/CSC203-Project/pull/new/added_entity_classes
+remote:
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+ * [new branch]      added_entity_classes -> added_entity_classes
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout master
+M	.idea/workspace.xml
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git merge added_entity_classes
+Updating 6cfc574..ed48b9d
+Fast-forward
+ branch_instructions.txt | 71 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/ANGELLOPARR/CSC203-Project.git
+   6cfc574..ed48b9d  master -> master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .idea/workspace.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	src/Blacksmith.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+  added_entity_classes
+* master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git checkout added_entity_classes
+M	.idea/workspace.xml
+Switched to branch 'added_entity_classes'
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git branch
+* added_entity_classes
+  master
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$ git status
+On branch added_entity_classes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .idea/workspace.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	src/Blacksmith.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Angellos-MacBook-Pro:Project1_IntelliJ angellop$

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import processing.core.PImage;
 
-public class Blacksmith {
+public class Blacksmith implements EntityGeneral {
 
     //private EntityKind kind;
     private String id;
@@ -43,7 +43,11 @@ public class Blacksmith {
         this.position = point;
     }
 
-    public static PImage getCurrentImage(Object entity) {
+    public List<PImage> getImages() { return this.images; }
+
+    public int getImageIndex() { return this.imageIndex; }
+
+    public PImage getCurrentImage(Object entity) {
         if (entity instanceof Background) {
             return ((Background) entity).getImages()
                     .get(((Background) entity).getImageIndex());

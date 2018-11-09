@@ -1,12 +1,10 @@
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-
 import processing.core.PImage;
 
-public class Blacksmith implements EntityGeneral {
+import java.util.List;
 
-    //private EntityKind kind;
+public class Obstacle implements EntityGeneral {
+
+    //private EntityKind kind
     private String id;
     private Point position;
     private List<PImage> images;
@@ -17,8 +15,7 @@ public class Blacksmith implements EntityGeneral {
     private int animationPeriod;
 
     //private static final Random rand = new Random();
-
-    public Blacksmith(String id, Point position, List<PImage> images) {
+    public Obstacle(String id, Point position, List<PImage> images) {
         //this.kind = kind;
         this.id = id;
         this.position = position;
@@ -51,8 +48,8 @@ public class Blacksmith implements EntityGeneral {
         if (entity instanceof Background) {
             return ((Background) entity).getImages()
                     .get(((Background) entity).getImageIndex());
-        } else if (entity instanceof Blacksmith) {
-            return ((Blacksmith) entity).getImages().get(((Blacksmith) entity).getImageIndex());
+        } else if (entity instanceof Obstacle) {
+                return ((Obstacle) entity).getImages().get(((Obstacle) entity).getImageIndex());
         } else {
             throw new UnsupportedOperationException(
                     String.format("getCurrentImage not supported for %s",

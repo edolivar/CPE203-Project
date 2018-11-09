@@ -7,7 +7,7 @@ public interface EntityGeneral {
     void setPosition(Point point);
     List<PImage> getImages();
     int getImageIndex();
-    PImage getCurrentImage(Object entity);
+    //PImage getCurrentImage(Object entity);
     void nextImage();
     boolean adjacent(Point p1, Point p2);
 

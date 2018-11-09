@@ -2,9 +2,9 @@ final class Event
 {
    private Action action;
    private long time;
-   private Entity entity;
+   private EntityGeneral entity;
 
-   public Event(Action action, long time, Entity entity)
+   public Event(Action action, long time, EntityGeneral entity)
    {
       this.action = action;
       this.time = time;
@@ -15,7 +15,7 @@ final class Event
       return this.time;
    }
 
-   public Entity getEntity(){
+   public EntityGeneral getEntity(){
       return this.entity;
    }
 

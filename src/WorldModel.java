@@ -5,9 +5,11 @@ import java.util.*;
 final class WorldModel {
    private int numRows;
    private int numCols;
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    private Background background[][];
-   private Entity occupancy[][];
-   private Set<Entity> entities;
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   private EntityGeneral occupancy[][];
+   private Set<EntityGeneral> entities;
 
    private static final int PROPERTY_KEY = 0;
 
@@ -56,7 +58,8 @@ final class WorldModel {
 
    private static final int ORE_REACH = 1;
 
-   public Set<Entity> getEntities() {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public Set<EntityGeneral> getEntities() {
       return this.entities;
    }
 
@@ -72,7 +75,8 @@ final class WorldModel {
       this.numRows = numRows;
       this.numCols = numCols;
       this.background = new Background[numRows][numCols];
-      this.occupancy = new Entity[numRows][numCols];
+      //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+      this.occupancy = new EntityGeneral[numRows][numCols];
       this.entities = new HashSet<>();
 
       for (int row = 0; row < numRows; row++) {
@@ -80,11 +84,11 @@ final class WorldModel {
       }
    }
 
-   public Optional<Entity> findNearest(Point pos,
-                                       EntityKind kind) {
-      List<Entity> ofType = new LinkedList<>();
-      for (Entity entity : entities) {
-         if (entity.getKind() == kind) {
+   public Optional<EntityGeneral> findNearest(Point pos,
+                                       Class kind) {
+      List<EntityGeneral> ofType = new LinkedList<>();
+      for (EntityGeneral entity : entities) {
+         if (entity.getClass() == kind) {
             ofType.add(entity);
          }
       }
@@ -92,12 +96,14 @@ final class WorldModel {
       return nearestEntity(ofType, pos);
    }
 
-   public void removeEntity(Entity entity) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public void removeEntity(EntityGeneral entity) {
       removeEntityAt(entity.getPosition());
    }
 
 
-   public void addEntity(Entity entity) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public void addEntity(EntityGeneral entity) {
       if (withinBounds(entity.getPosition())) {
          setOccupancyCell(entity.getPosition(), entity);
          this.entities.add(entity);
@@ -114,15 +120,18 @@ final class WorldModel {
               pos.x >= 0 && pos.x < this.numCols;
    }
 
-   public Entity getOccupancyCell(Point pos) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public EntityGeneral getOccupancyCell(Point pos) {
       return this.occupancy[pos.y][pos.x];
    }
 
-   public void setOccupancyCell(Point pos, Entity entity) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public void setOccupancyCell(Point pos, EntityGeneral entity) {
       this.occupancy[pos.y][pos.x] = entity;
    }
 
-   public Optional<Entity> getOccupant(Point pos) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public Optional<EntityGeneral> getOccupant(Point pos) {
       if (isOccupied(pos)) {
          return Optional.of(getOccupancyCell(pos));
       } else {
@@ -133,7 +142,8 @@ final class WorldModel {
    public void removeEntityAt(Point pos) {
       if (withinBounds(pos)
               && getOccupancyCell(pos) != null) {
-         Entity entity = getOccupancyCell(pos);
+         //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+         EntityGeneral entity = getOccupancyCell(pos);
 
          /* this moves the entity just outside of the grid for
             debugging purposes */
@@ -143,7 +153,8 @@ final class WorldModel {
       }
    }
 
-   public void moveEntity(Entity entity, Point pos) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public void moveEntity(EntityGeneral entity, Point pos) {
       Point oldPos = entity.getPosition();
       if (withinBounds(pos) && !pos.equals(oldPos)) {
          setOccupancyCell(oldPos, null);
@@ -153,7 +164,8 @@ final class WorldModel {
       }
    }
 
-   public void tryAddEntity(Entity entity) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public void tryAddEntity(EntityGeneral entity) {
       if (isOccupied(entity.getPosition())) {
          // arguably the wrong type of exception, but we are not
          // defining our own exceptions yet
@@ -194,7 +206,7 @@ final class WorldModel {
 
    public Optional<PImage> getBackgroundImage(Point pos) {
       if (this.withinBounds(pos)) {
-         return Optional.of(Entity.getCurrentImage(this.getBackgroundCell(pos)));
+         return Optional.of(Background.getCurrentImage(this.getBackgroundCell(pos)));
       } else {
          return Optional.empty();
       }
@@ -219,7 +231,7 @@ final class WorldModel {
       if (properties.length == MINER_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[MINER_COL]),
                  Integer.parseInt(properties[MINER_ROW]));
-         Entity entity = Entity.createMinerNotFull(properties[MINER_ID],
+         EntityGeneral entity = new MinerNotFull(properties[MINER_ID],
                  Integer.parseInt(properties[MINER_LIMIT]),
                  pt,
                  Integer.parseInt(properties[MINER_ACTION_PERIOD]),
@@ -237,7 +249,7 @@ final class WorldModel {
          Point pt = new Point(
                  Integer.parseInt(properties[OBSTACLE_COL]),
                  Integer.parseInt(properties[OBSTACLE_ROW]));
-         Entity entity = Entity.createObstacle(properties[OBSTACLE_ID],
+         Obstacle entity = new Obstacle(properties[OBSTACLE_ID],
                  pt, imageStore.getImageList(OBSTACLE_KEY));
          world.tryAddEntity(entity);
       }
@@ -250,7 +262,7 @@ final class WorldModel {
       if (properties.length == ORE_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[ORE_COL]),
                  Integer.parseInt(properties[ORE_ROW]));
-         Entity entity = Entity.createOre(properties[ORE_ID],
+         Ore entity = new Ore(properties[ORE_ID],
                  pt, Integer.parseInt(properties[ORE_ACTION_PERIOD]),
                  imageStore.getImageList(ORE_KEY));
          world.tryAddEntity(entity);
@@ -264,7 +276,7 @@ final class WorldModel {
       if (properties.length == SMITH_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[SMITH_COL]),
                  Integer.parseInt(properties[SMITH_ROW]));
-         Entity entity = Entity.createBlacksmith(properties[SMITH_ID],
+         Blacksmith entity = new Blacksmith(properties[SMITH_ID],
                  pt, imageStore.getImageList(SMITH_KEY));
          world.tryAddEntity(entity);
       }
@@ -277,7 +289,7 @@ final class WorldModel {
       if (properties.length == VEIN_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[VEIN_COL]),
                  Integer.parseInt(properties[VEIN_ROW]));
-         Entity entity = Entity.createVein(properties[VEIN_ID],
+         Vein entity = new Vein(properties[VEIN_ID],
                  pt,
                  Integer.parseInt(properties[VEIN_ACTION_PERIOD]),
                  imageStore.getImageList(VEIN_KEY));
@@ -309,15 +321,16 @@ final class WorldModel {
       return false;
    }
 
-   public static Optional<Entity> nearestEntity(List<Entity> entities,
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public static Optional<EntityGeneral> nearestEntity(List<EntityGeneral> entities,
                                                 Point pos) {
       if (entities.isEmpty()) {
          return Optional.empty();
       } else {
-         Entity nearest = entities.get(0);
+         EntityGeneral nearest = entities.get(0);
          int nearestDistance = distanceSquared(nearest.getPosition(), pos);
 
-         for (Entity other : entities) {
+         for (EntityGeneral other : entities) {
             int otherDistance = distanceSquared(other.getPosition(), pos);
 
             if (otherDistance < nearestDistance) {

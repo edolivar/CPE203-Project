@@ -47,19 +47,6 @@ public class Blacksmith implements EntityGeneral {
 
     public int getImageIndex() { return this.imageIndex; }
 
-    public PImage getCurrentImage(Object entity) {
-        if (entity instanceof Background) {
-            return ((Background) entity).getImages()
-                    .get(((Background) entity).getImageIndex());
-        } else if (entity instanceof Blacksmith) {
-            return ((Blacksmith) entity).getImages().get(((Blacksmith) entity).getImageIndex());
-        } else {
-            throw new UnsupportedOperationException(
-                    String.format("getCurrentImage not supported for %s",
-                            entity));
-        }
-    }
-
     public void nextImage() {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
     }

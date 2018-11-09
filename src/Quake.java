@@ -2,9 +2,8 @@ import processing.core.PImage;
 
 import java.util.List;
 
-public class Obstacle implements EntityGeneral {
+public class Quake implements EntityGeneral, EntityMain, EntityWithAnimation {
 
-    //private EntityKind kind
     private String id;
     private Point position;
     private List<PImage> images;
@@ -13,9 +12,11 @@ public class Obstacle implements EntityGeneral {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    private static final int QUAKE_ANIMATION_REPEAT_COUNT = 10;
 
     //private static final Random rand = new Random();
-    public Obstacle(String id, Point position, List<PImage> images) {
+
+    public Quake(Point position, List<PImage> images) {
         //this.kind = kind;
         this.id = id;
         this.position = position;
@@ -48,9 +49,30 @@ public class Obstacle implements EntityGeneral {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
     }
 
+    public int getAnimationPeriod() { return this.animationPeriod; }
+
     public boolean adjacent(Point p1, Point p2) {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
 
+    public void executeActivity(WorldModel world,
+                                     ImageStore imageStore, EventScheduler scheduler)
+    {
+        scheduler.unscheduleAllEvents(this);
+        world.removeEntity(this);
+    }
+
+    //animationPeriod
+    public void scheduleActions(EventScheduler scheduler,
+                                WorldModel world, ImageStore imageStore)
+    {
+                scheduler.scheduleEvent(this,
+                        new Activity(this, world, imageStore),
+                        this.actionPeriod);
+                scheduler.scheduleEvent(this,
+                        new Animation(this, QUAKE_ANIMATION_REPEAT_COUNT),
+                        this.animationPeriod);
+
+    }
 }

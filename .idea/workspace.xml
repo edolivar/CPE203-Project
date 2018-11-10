@@ -50,7 +50,7 @@
     <session id="-2131304300">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="2" />
@@ -478,7 +478,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280255" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22770701" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22770701" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43949044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

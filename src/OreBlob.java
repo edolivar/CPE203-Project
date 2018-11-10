@@ -75,6 +75,9 @@ public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
                 quake.scheduleActions(scheduler, world, imageStore);
             }
         }
+        scheduler.scheduleEvent(this,
+                new Activity(this, world, imageStore),
+                nextPeriod);
     }
 
     //animationPeriod

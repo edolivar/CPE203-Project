@@ -67,7 +67,8 @@ public class Ore implements Entity, EntityMain {
     }
 
     public void executeActivity(WorldModel world,
-                                ImageStore imageStore, EventScheduler scheduler) {
+                                          ImageStore imageStore, EventScheduler scheduler)
+    {
         Point pos = this.position;  // store current position before removing
 
         world.removeEntity(this);

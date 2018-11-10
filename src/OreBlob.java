@@ -31,11 +31,6 @@ public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
         this.actionPeriod = actionPeriod;
         this.animationPeriod = animationPeriod;
     }
-/*
-        public EntityKind getKind(){
-            return this.kind;
-        }
-*/
 
     public Point getPosition() {
         return this.position;
@@ -61,14 +56,17 @@ public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
     }
 
     public void executeActivity(WorldModel world,
-                                       ImageStore imageStore, EventScheduler scheduler) {
+                                       ImageStore imageStore, EventScheduler scheduler)
+    {
         Optional<Entity> blobTarget = world.findNearest(this.position, Vein.class);
         long nextPeriod = this.actionPeriod;
 
-        if (blobTarget.isPresent()) {
+        if (blobTarget.isPresent())
+        {
             Point tgtPos = blobTarget.get().getPosition();
 
-            if (this.moveToOreBlob(world, blobTarget.get(), scheduler)) {
+            if (this.moveToOreBlob(world, blobTarget.get(), scheduler))
+            {
                 Quake quake = new Quake(tgtPos,
                         imageStore.getImageList(QUAKE_KEY));
 
@@ -87,11 +85,11 @@ public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
                 new Activity(this, world, imageStore),
                 this.actionPeriod);
         scheduler.scheduleEvent(this,
-                new Animation(this, 0), this.animationPeriod);
+                new Animation(this, 0), this.getAnimationPeriod());
     }
 
     public boolean moveToOreBlob(WorldModel world,
-                                 Entity target, EventScheduler scheduler)
+                                        Entity target, EventScheduler scheduler)
     {
         if (adjacent(this.position, target.getPosition()))
         {
@@ -142,5 +140,6 @@ public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
 
         return newPos;
     }
+
 
 }

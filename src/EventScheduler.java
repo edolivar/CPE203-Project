@@ -20,13 +20,13 @@ final class EventScheduler
               (long)(afterPeriod * timeScale);
       Event event = new Event(action, time, entity);
 
-      eventQueue.add(event);
+      this.eventQueue.add(event);
 
       // update list of pending events for the given entity
-      List<Event> pending = pendingEvents.getOrDefault(entity,
+      List<Event> pending = this.pendingEvents.getOrDefault(entity,
               new LinkedList<>());
       pending.add(event);
-      pendingEvents.put(entity, pending);
+      this.pendingEvents.put(entity, pending);
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL
@@ -60,7 +60,7 @@ final class EventScheduler
       {
          Event next = this.eventQueue.poll();
 
-         removePendingEvent(next);
+         this.removePendingEvent(next);
 
          next.getAction().executeAction(this);
       }

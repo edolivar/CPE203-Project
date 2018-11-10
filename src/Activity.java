@@ -1,6 +1,5 @@
 public class Activity implements Action {
 
-    private ActionKind kind;
     private EntityMain entity;
     private WorldModel world;
     private ImageStore imageStore;
@@ -11,9 +10,10 @@ public class Activity implements Action {
         this.entity = entity;
         this.world = world;
         this.imageStore = imageStore;
+        this.repeatCount = 0;
     }
 
-    public Entity getEntity(){
+    public EntityMain getEntity(){
         return this.entity;
     }
 
@@ -28,30 +28,30 @@ public class Activity implements Action {
     public void executeAction(EventScheduler scheduler)
     {
         /*switch (this.entity.getClass()this.entity.getKind())*/
-        if (this.entity instanceof MinerFull) {
+        if (this.entity instanceof EntityMain) {
             this.entity.executeActivity(this.getWorld(),
                     this.getImageStore(), scheduler);
         }
-        else if (this.entity instanceof MinerNotFull) {
-            this.entity.executeActivity(this.getWorld(),
-                    this.getImageStore(), scheduler);
-        }
-        else if (this.entity instanceof Ore) {
-            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-                    scheduler);
-        }
-        else if (this.entity instanceof OreBlob) {
-            this.entity.executeActivity(this.getWorld(),
-                    this.getImageStore(), scheduler);
-        }
-        else if (this.entity instanceof Quake) {
-            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-                    scheduler);
-        }
-        else if (this.entity instanceof Vein) {
-            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-                    scheduler);
-        }
+//        else if (this.entity instanceof MinerNotFull) {
+//            this.entity.executeActivity(this.getWorld(),
+//                    this.getImageStore(), scheduler);
+//        }
+//        else if (this.entity instanceof Ore) {
+//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
+//                    scheduler);
+//        }
+//        else if (this.entity instanceof OreBlob) {
+//            this.entity.executeActivity(this.getWorld(),
+//                    this.getImageStore(), scheduler);
+//        }
+//        else if (this.entity instanceof Quake) {
+//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
+//                    scheduler);
+//        }
+//        else if (this.entity instanceof Vein) {
+//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
+//                    scheduler);
+//        }
         else {
             throw new UnsupportedOperationException(
                     String.format("executeActivityAction not supported for %s",

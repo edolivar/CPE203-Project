@@ -1,6 +1,5 @@
 public class Animation implements Action{
 
-    private ActionKind kind;
     private EntityWithAnimation entity;
     private WorldModel world;
     private ImageStore imageStore;
@@ -8,6 +7,8 @@ public class Animation implements Action{
 
     public Animation(EntityWithAnimation entity, int repeatCount) {
         this.entity = entity;
+        this.world = null;
+        this.imageStore = null;
         this.repeatCount = repeatCount;
     }
 

@@ -85,7 +85,7 @@ final class WorldModel {
    }
 
    public Optional<Entity> findNearest(Point pos,
-                                       Class kind) {
+                                       Class<?> kind) {
       List<Entity> ofType = new LinkedList<>();
       for (Entity entity : entities) {
          if (entity.getClass() == kind) {
@@ -110,18 +110,21 @@ final class WorldModel {
       }
    }
 
-   public boolean isOccupied(Point pos) {
+   public boolean isOccupied(Point pos)
+   {
       return withinBounds(pos) &&
               getOccupancyCell(pos) != null;
    }
 
-   public boolean withinBounds(Point pos) {
+   public boolean withinBounds(Point pos)
+   {
       return pos.y >= 0 && pos.y < this.numRows &&
               pos.x >= 0 && pos.x < this.numCols;
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public Entity getOccupancyCell(Point pos) {
+   public Entity getOccupancyCell(Point pos)
+   {
       return this.occupancy[pos.y][pos.x];
    }
 
@@ -131,10 +134,14 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public Optional<Entity> getOccupant(Point pos) {
-      if (isOccupied(pos)) {
+   public Optional<Entity> getOccupant(Point pos)
+   {
+      if (this.isOccupied(pos))
+      {
          return Optional.of(getOccupancyCell(pos));
-      } else {
+      }
+      else
+      {
          return Optional.empty();
       }
    }
@@ -213,8 +220,7 @@ final class WorldModel {
    }
 
 
-   public boolean parseBackground(String[] properties,
-                                  WorldModel world, ImageStore imageStore) {
+   public boolean parseBackground(String[] properties, ImageStore imageStore) {
       if (properties.length == BGND_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[BGND_COL]),
                  Integer.parseInt(properties[BGND_ROW]));
@@ -226,7 +232,7 @@ final class WorldModel {
       return properties.length == BGND_NUM_PROPERTIES;
    }
 
-   public boolean parseMiner(String[] properties, WorldModel world,
+   public boolean parseMiner(String[] properties,
                              ImageStore imageStore) {
       if (properties.length == MINER_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[MINER_COL]),
@@ -237,13 +243,13 @@ final class WorldModel {
                  Integer.parseInt(properties[MINER_ACTION_PERIOD]),
                  Integer.parseInt(properties[MINER_ANIMATION_PERIOD]),
                  imageStore.getImageList(MINER_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == MINER_NUM_PROPERTIES;
    }
 
-   public boolean parseObstacle(String[] properties, WorldModel world,
+   public boolean parseObstacle(String[] properties,
                                 ImageStore imageStore) {
       if (properties.length == OBSTACLE_NUM_PROPERTIES) {
          Point pt = new Point(
@@ -251,13 +257,13 @@ final class WorldModel {
                  Integer.parseInt(properties[OBSTACLE_ROW]));
          Obstacle entity = new Obstacle(properties[OBSTACLE_ID],
                  pt, imageStore.getImageList(OBSTACLE_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == OBSTACLE_NUM_PROPERTIES;
    }
 
-   public boolean parseOre(String[] properties, WorldModel world,
+   public boolean parseOre(String[] properties,
                            ImageStore imageStore) {
       if (properties.length == ORE_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[ORE_COL]),
@@ -265,26 +271,26 @@ final class WorldModel {
          Ore entity = new Ore(properties[ORE_ID],
                  pt, Integer.parseInt(properties[ORE_ACTION_PERIOD]),
                  imageStore.getImageList(ORE_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == ORE_NUM_PROPERTIES;
    }
 
-   public boolean parseSmith(String[] properties, WorldModel world,
+   public boolean parseSmith(String[] properties,
                              ImageStore imageStore) {
       if (properties.length == SMITH_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[SMITH_COL]),
                  Integer.parseInt(properties[SMITH_ROW]));
          Blacksmith entity = new Blacksmith(properties[SMITH_ID],
                  pt, imageStore.getImageList(SMITH_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == SMITH_NUM_PROPERTIES;
    }
 
-   public boolean parseVein(String[] properties, WorldModel world,
+   public boolean parseVein(String[] properties,
                             ImageStore imageStore) {
       if (properties.length == VEIN_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[VEIN_COL]),
@@ -293,7 +299,7 @@ final class WorldModel {
                  pt,
                  Integer.parseInt(properties[VEIN_ACTION_PERIOD]),
                  imageStore.getImageList(VEIN_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == VEIN_NUM_PROPERTIES;
@@ -304,17 +310,17 @@ final class WorldModel {
       if (properties.length > 0) {
          switch (properties[PROPERTY_KEY]) {
             case BGND_KEY:
-               return parseBackground(properties, this, imageStore);
+               return parseBackground(properties, imageStore);
             case MINER_KEY:
-               return parseMiner(properties, this, imageStore);
+               return parseMiner(properties, imageStore);
             case OBSTACLE_KEY:
-               return parseObstacle(properties, this, imageStore);
+               return parseObstacle(properties, imageStore);
             case ORE_KEY:
-               return parseOre(properties, this, imageStore);
+               return parseOre(properties, imageStore);
             case SMITH_KEY:
-               return parseSmith(properties, this, imageStore);
+               return parseSmith(properties, imageStore);
             case VEIN_KEY:
-               return parseVein(properties, this, imageStore);
+               return parseVein(properties, imageStore);
          }
       }
 

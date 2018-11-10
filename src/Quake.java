@@ -13,19 +13,22 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
     private int actionPeriod;
     private int animationPeriod;
     private static final int QUAKE_ANIMATION_REPEAT_COUNT = 10;
+    private final String QUAKE_ID = "quake";
+    private final int QUAKE_ACTION_PERIOD = 1100;
+    private final int QUAKE_ANIMATION_PERIOD = 100;
 
     //private static final Random rand = new Random();
 
     public Quake(Point position, List<PImage> images) {
         //this.kind = kind;
-        this.id = id;
+        this.id = QUAKE_ID;
         this.position = position;
         this.images = images;
         this.imageIndex = 0;
         this.resourceLimit = 0;
         this.resourceCount = 0;
-        this.actionPeriod = 0;
-        this.animationPeriod = 0;
+        this.actionPeriod = QUAKE_ACTION_PERIOD;
+        this.animationPeriod = QUAKE_ANIMATION_PERIOD;
     }
 /*
         public EntityKind getKind(){

@@ -2,7 +2,7 @@ import processing.core.PImage;
 
 import java.util.List;
 
-public class Obstacle implements EntityGeneral {
+public class Obstacle implements Entity {
 
     //private EntityKind kind
     private String id;
@@ -51,6 +51,10 @@ public class Obstacle implements EntityGeneral {
     public boolean adjacent(Point p1, Point p2) {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
+    }
+
+    public void scheduleActions(EventScheduler scheduler,
+                                WorldModel world, ImageStore imageStore) {
     }
 
 }

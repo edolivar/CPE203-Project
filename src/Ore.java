@@ -2,7 +2,7 @@ import processing.core.PImage;
 import java.util.Random;
 import java.util.List;
 
-public class Ore implements EntityGeneral, EntityMain {
+public class Ore implements Entity, EntityMain {
 
     //private EntityKind kind;
     private String id;
@@ -32,7 +32,7 @@ public class Ore implements EntityGeneral, EntityMain {
         this.imageIndex = 0;
         this.resourceLimit = 0;
         this.resourceCount = 0;
-        this.actionPeriod = 0;
+        this.actionPeriod = actionPeriod;
         this.animationPeriod = 0;
     }
 /*

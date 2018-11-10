@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-public class Vein implements EntityGeneral, EntityMain{
+public class Vein implements Entity, EntityMain{
 
     private String id;
     private Point position;
@@ -32,7 +32,7 @@ public class Vein implements EntityGeneral, EntityMain{
         this.imageIndex = 0;
         this.resourceLimit = 0;
         this.resourceCount = 0;
-        this.actionPeriod = 0;
+        this.actionPeriod = actionPeriod;
         this.animationPeriod = 0;
     }
 /*

@@ -3,7 +3,7 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class MinerFull implements EntityGeneral, EntityMain, EntityWithAnimation {
+public class MinerFull implements Entity, EntityMain, EntityWithAnimation {
 
     private String id;
     private Point position;
@@ -24,10 +24,10 @@ public class MinerFull implements EntityGeneral, EntityMain, EntityWithAnimation
         this.position = position;
         this.images = images;
         this.imageIndex = 0;
-        this.resourceLimit = 0;
+        this.resourceLimit = resourceLimit;
         this.resourceCount = 0;
-        this.actionPeriod = 0;
-        this.animationPeriod = 0;
+        this.actionPeriod = actionPeriod;
+        this.animationPeriod = animationPeriod;
     }
 
     public Point getPosition() {
@@ -56,7 +56,7 @@ public class MinerFull implements EntityGeneral, EntityMain, EntityWithAnimation
     public void executeActivity(WorldModel world,
                                          ImageStore imageStore, EventScheduler scheduler)
     {
-        Optional<EntityGeneral> fullTarget = world.findNearest(this.position,
+        Optional<Entity> fullTarget = world.findNearest(this.position,
                 Blacksmith.class);
 
         if (fullTarget.isPresent() &&
@@ -73,7 +73,7 @@ public class MinerFull implements EntityGeneral, EntityMain, EntityWithAnimation
     }
 
     public boolean moveToFull(WorldModel world,
-                              EntityGeneral target, EventScheduler scheduler)
+                              Entity target, EventScheduler scheduler)
     {
         //getPosition()
         if (adjacent(this.position, target.getPosition()))
@@ -87,7 +87,7 @@ public class MinerFull implements EntityGeneral, EntityMain, EntityWithAnimation
 
             if (!this.position.equals(nextPos))
             {
-                Optional<EntityGeneral> occupant = world.getOccupant(nextPos);
+                Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())
                 {
                     scheduler.unscheduleAllEvents(occupant.get());

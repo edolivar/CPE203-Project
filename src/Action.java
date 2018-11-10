@@ -1,6 +1,6 @@
 public interface Action {
 
-    EntityGeneral getEntity();
+    Entity getEntity();
     WorldModel getWorld();
     ImageStore getImageStore();
     void executeAction(EventScheduler scheduler);

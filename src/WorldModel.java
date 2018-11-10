@@ -8,8 +8,8 @@ final class WorldModel {
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    private Background background[][];
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   private EntityGeneral occupancy[][];
-   private Set<EntityGeneral> entities;
+   private Entity occupancy[][];
+   private Set<Entity> entities;
 
    private static final int PROPERTY_KEY = 0;
 
@@ -59,7 +59,7 @@ final class WorldModel {
    private static final int ORE_REACH = 1;
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public Set<EntityGeneral> getEntities() {
+   public Set<Entity> getEntities() {
       return this.entities;
    }
 
@@ -76,7 +76,7 @@ final class WorldModel {
       this.numCols = numCols;
       this.background = new Background[numRows][numCols];
       //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-      this.occupancy = new EntityGeneral[numRows][numCols];
+      this.occupancy = new Entity[numRows][numCols];
       this.entities = new HashSet<>();
 
       for (int row = 0; row < numRows; row++) {
@@ -84,10 +84,10 @@ final class WorldModel {
       }
    }
 
-   public Optional<EntityGeneral> findNearest(Point pos,
+   public Optional<Entity> findNearest(Point pos,
                                        Class kind) {
-      List<EntityGeneral> ofType = new LinkedList<>();
-      for (EntityGeneral entity : entities) {
+      List<Entity> ofType = new LinkedList<>();
+      for (Entity entity : entities) {
          if (entity.getClass() == kind) {
             ofType.add(entity);
          }
@@ -97,13 +97,13 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public void removeEntity(EntityGeneral entity) {
+   public void removeEntity(Entity entity) {
       removeEntityAt(entity.getPosition());
    }
 
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public void addEntity(EntityGeneral entity) {
+   public void addEntity(Entity entity) {
       if (withinBounds(entity.getPosition())) {
          setOccupancyCell(entity.getPosition(), entity);
          this.entities.add(entity);
@@ -121,17 +121,17 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public EntityGeneral getOccupancyCell(Point pos) {
+   public Entity getOccupancyCell(Point pos) {
       return this.occupancy[pos.y][pos.x];
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public void setOccupancyCell(Point pos, EntityGeneral entity) {
+   public void setOccupancyCell(Point pos, Entity entity) {
       this.occupancy[pos.y][pos.x] = entity;
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public Optional<EntityGeneral> getOccupant(Point pos) {
+   public Optional<Entity> getOccupant(Point pos) {
       if (isOccupied(pos)) {
          return Optional.of(getOccupancyCell(pos));
       } else {
@@ -143,7 +143,7 @@ final class WorldModel {
       if (withinBounds(pos)
               && getOccupancyCell(pos) != null) {
          //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-         EntityGeneral entity = getOccupancyCell(pos);
+         Entity entity = getOccupancyCell(pos);
 
          /* this moves the entity just outside of the grid for
             debugging purposes */
@@ -154,7 +154,7 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public void moveEntity(EntityGeneral entity, Point pos) {
+   public void moveEntity(Entity entity, Point pos) {
       Point oldPos = entity.getPosition();
       if (withinBounds(pos) && !pos.equals(oldPos)) {
          setOccupancyCell(oldPos, null);
@@ -165,7 +165,7 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public void tryAddEntity(EntityGeneral entity) {
+   public void tryAddEntity(Entity entity) {
       if (isOccupied(entity.getPosition())) {
          // arguably the wrong type of exception, but we are not
          // defining our own exceptions yet
@@ -231,7 +231,7 @@ final class WorldModel {
       if (properties.length == MINER_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[MINER_COL]),
                  Integer.parseInt(properties[MINER_ROW]));
-         EntityGeneral entity = new MinerNotFull(properties[MINER_ID],
+         Entity entity = new MinerNotFull(properties[MINER_ID],
                  Integer.parseInt(properties[MINER_LIMIT]),
                  pt,
                  Integer.parseInt(properties[MINER_ACTION_PERIOD]),
@@ -322,15 +322,15 @@ final class WorldModel {
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
-   public static Optional<EntityGeneral> nearestEntity(List<EntityGeneral> entities,
+   public static Optional<Entity> nearestEntity(List<Entity> entities,
                                                 Point pos) {
       if (entities.isEmpty()) {
          return Optional.empty();
       } else {
-         EntityGeneral nearest = entities.get(0);
+         Entity nearest = entities.get(0);
          int nearestDistance = distanceSquared(nearest.getPosition(), pos);
 
-         for (EntityGeneral other : entities) {
+         for (Entity other : entities) {
             int otherDistance = distanceSquared(other.getPosition(), pos);
 
             if (otherDistance < nearestDistance) {

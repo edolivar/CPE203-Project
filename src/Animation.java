@@ -11,7 +11,7 @@ public class Animation implements Action{
         this.repeatCount = repeatCount;
     }
 
-    public EntityGeneral getEntity(){
+    public Entity getEntity(){
         return this.entity;
     }
 

@@ -3,7 +3,7 @@ import java.util.*;
 final class EventScheduler
 {
    private PriorityQueue<Event> eventQueue;
-   private Map<EntityGeneral, List<Event>> pendingEvents;
+   private Map<Entity, List<Event>> pendingEvents;
    private double timeScale;
 
    public EventScheduler(double timeScale)
@@ -14,7 +14,7 @@ final class EventScheduler
    }
 
 
-   public void scheduleEvent(EntityGeneral entity, Action action, long afterPeriod)
+   public void scheduleEvent(Entity entity, Action action, long afterPeriod)
    {
       long time = System.currentTimeMillis() +
               (long)(afterPeriod * timeScale);
@@ -30,7 +30,7 @@ final class EventScheduler
    }
 
    //CHANGE ENTITY TO ENTITYGENERAL
-   public void unscheduleAllEvents(EntityGeneral entity)
+   public void unscheduleAllEvents(Entity entity)
    {
       List<Event> pending = this.pendingEvents.remove(entity);
 

@@ -3,7 +3,7 @@ import java.util.Optional;
 import java.util.Random;
 import processing.core.PImage;
 
-public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
+public class OreBlob implements Entity, EntityMain, EntityWithAnimation {
 
     private String id;
     private Point position;
@@ -28,8 +28,8 @@ public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
         this.imageIndex = 0;
         this.resourceLimit = 0;
         this.resourceCount = 0;
-        this.actionPeriod = 0;
-        this.animationPeriod = 0;
+        this.actionPeriod = actionPeriod;
+        this.animationPeriod = animationPeriod;
     }
 /*
         public EntityKind getKind(){
@@ -62,7 +62,7 @@ public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
 
     public void executeActivity(WorldModel world,
                                        ImageStore imageStore, EventScheduler scheduler) {
-        Optional<EntityGeneral> blobTarget = world.findNearest(this.position, Vein.class);
+        Optional<Entity> blobTarget = world.findNearest(this.position, Vein.class);
         long nextPeriod = this.actionPeriod;
 
         if (blobTarget.isPresent()) {
@@ -91,7 +91,7 @@ public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
     }
 
     public boolean moveToOreBlob(WorldModel world,
-                                 EntityGeneral target, EventScheduler scheduler)
+                                 Entity target, EventScheduler scheduler)
     {
         if (adjacent(this.position, target.getPosition()))
         {
@@ -105,7 +105,7 @@ public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
 
             if (!this.position.equals(nextPos))
             {
-                Optional<EntityGeneral> occupant = world.getOccupant(nextPos);
+                Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())
                 {
                     scheduler.unscheduleAllEvents(occupant.get());
@@ -124,7 +124,7 @@ public class OreBlob implements EntityGeneral, EntityMain, EntityWithAnimation {
         Point newPos = new Point(this.position.x + horiz,
                 this.position.y);
 
-        Optional<EntityGeneral> occupant = world.getOccupant(newPos);
+        Optional<Entity> occupant = world.getOccupant(newPos);
 
         if (horiz == 0 ||
                 (occupant.isPresent() && !(occupant.get() instanceof Ore)))

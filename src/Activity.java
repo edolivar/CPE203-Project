@@ -13,7 +13,7 @@ public class Activity implements Action {
         this.imageStore = imageStore;
     }
 
-    public EntityGeneral getEntity(){
+    public Entity getEntity(){
         return this.entity;
     }
 

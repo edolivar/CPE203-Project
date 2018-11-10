@@ -1,4 +1,4 @@
-public interface EntityWithAnimation extends EntityGeneral, EntityMain {
+public interface EntityWithAnimation extends Entity, EntityMain {
 
     public int getAnimationPeriod();
 

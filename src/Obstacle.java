@@ -1,12 +1,10 @@
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-
 import processing.core.PImage;
 
-public class Blacksmith implements Entity {
+import java.util.List;
 
-    //private EntityKind kind;
+public class Obstacle implements Entity {
+
+    //private EntityKind kind
     private String id;
     private Point position;
     private List<PImage> images;
@@ -17,8 +15,7 @@ public class Blacksmith implements Entity {
     private int animationPeriod;
 
     //private static final Random rand = new Random();
-
-    public Blacksmith(String id, Point position, List<PImage> images) {
+    public Obstacle(String id, Point position, List<PImage> images) {
         //this.kind = kind;
         this.id = id;
         this.position = position;
@@ -57,7 +54,7 @@ public class Blacksmith implements Entity {
     }
 
     public void scheduleActions(EventScheduler scheduler,
-                         WorldModel world, ImageStore imageStore) {
+                                WorldModel world, ImageStore imageStore) {
     }
 
 }

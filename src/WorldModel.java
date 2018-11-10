@@ -5,7 +5,9 @@ import java.util.*;
 final class WorldModel {
    private int numRows;
    private int numCols;
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    private Background background[][];
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    private Entity occupancy[][];
    private Set<Entity> entities;
 
@@ -56,6 +58,7 @@ final class WorldModel {
 
    private static final int ORE_REACH = 1;
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public Set<Entity> getEntities() {
       return this.entities;
    }
@@ -72,6 +75,7 @@ final class WorldModel {
       this.numRows = numRows;
       this.numCols = numCols;
       this.background = new Background[numRows][numCols];
+      //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
       this.occupancy = new Entity[numRows][numCols];
       this.entities = new HashSet<>();
 
@@ -81,10 +85,10 @@ final class WorldModel {
    }
 
    public Optional<Entity> findNearest(Point pos,
-                                       EntityKind kind) {
+                                       Class<?> kind) {
       List<Entity> ofType = new LinkedList<>();
       for (Entity entity : entities) {
-         if (entity.getKind() == kind) {
+         if (entity.getClass() == kind) {
             ofType.add(entity);
          }
       }
@@ -92,11 +96,13 @@ final class WorldModel {
       return nearestEntity(ofType, pos);
    }
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public void removeEntity(Entity entity) {
       removeEntityAt(entity.getPosition());
    }
 
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public void addEntity(Entity entity) {
       if (withinBounds(entity.getPosition())) {
          setOccupancyCell(entity.getPosition(), entity);
@@ -104,28 +110,38 @@ final class WorldModel {
       }
    }
 
-   public boolean isOccupied(Point pos) {
+   public boolean isOccupied(Point pos)
+   {
       return withinBounds(pos) &&
               getOccupancyCell(pos) != null;
    }
 
-   public boolean withinBounds(Point pos) {
+   public boolean withinBounds(Point pos)
+   {
       return pos.y >= 0 && pos.y < this.numRows &&
               pos.x >= 0 && pos.x < this.numCols;
    }
 
-   public Entity getOccupancyCell(Point pos) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public Entity getOccupancyCell(Point pos)
+   {
       return this.occupancy[pos.y][pos.x];
    }
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public void setOccupancyCell(Point pos, Entity entity) {
       this.occupancy[pos.y][pos.x] = entity;
    }
 
-   public Optional<Entity> getOccupant(Point pos) {
-      if (isOccupied(pos)) {
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
+   public Optional<Entity> getOccupant(Point pos)
+   {
+      if (this.isOccupied(pos))
+      {
          return Optional.of(getOccupancyCell(pos));
-      } else {
+      }
+      else
+      {
          return Optional.empty();
       }
    }
@@ -133,6 +149,7 @@ final class WorldModel {
    public void removeEntityAt(Point pos) {
       if (withinBounds(pos)
               && getOccupancyCell(pos) != null) {
+         //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
          Entity entity = getOccupancyCell(pos);
 
          /* this moves the entity just outside of the grid for
@@ -143,6 +160,7 @@ final class WorldModel {
       }
    }
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public void moveEntity(Entity entity, Point pos) {
       Point oldPos = entity.getPosition();
       if (withinBounds(pos) && !pos.equals(oldPos)) {
@@ -153,6 +171,7 @@ final class WorldModel {
       }
    }
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public void tryAddEntity(Entity entity) {
       if (isOccupied(entity.getPosition())) {
          // arguably the wrong type of exception, but we are not
@@ -194,15 +213,14 @@ final class WorldModel {
 
    public Optional<PImage> getBackgroundImage(Point pos) {
       if (this.withinBounds(pos)) {
-         return Optional.of(Entity.getCurrentImage(this.getBackgroundCell(pos)));
+         return Optional.of(Background.getCurrentImage(this.getBackgroundCell(pos)));
       } else {
          return Optional.empty();
       }
    }
 
 
-   public boolean parseBackground(String[] properties,
-                                  WorldModel world, ImageStore imageStore) {
+   public boolean parseBackground(String[] properties, ImageStore imageStore) {
       if (properties.length == BGND_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[BGND_COL]),
                  Integer.parseInt(properties[BGND_ROW]));
@@ -214,74 +232,74 @@ final class WorldModel {
       return properties.length == BGND_NUM_PROPERTIES;
    }
 
-   public boolean parseMiner(String[] properties, WorldModel world,
+   public boolean parseMiner(String[] properties,
                              ImageStore imageStore) {
       if (properties.length == MINER_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[MINER_COL]),
                  Integer.parseInt(properties[MINER_ROW]));
-         Entity entity = Entity.createMinerNotFull(properties[MINER_ID],
+         Entity entity = new MinerNotFull(properties[MINER_ID],
                  Integer.parseInt(properties[MINER_LIMIT]),
                  pt,
                  Integer.parseInt(properties[MINER_ACTION_PERIOD]),
                  Integer.parseInt(properties[MINER_ANIMATION_PERIOD]),
                  imageStore.getImageList(MINER_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == MINER_NUM_PROPERTIES;
    }
 
-   public boolean parseObstacle(String[] properties, WorldModel world,
+   public boolean parseObstacle(String[] properties,
                                 ImageStore imageStore) {
       if (properties.length == OBSTACLE_NUM_PROPERTIES) {
          Point pt = new Point(
                  Integer.parseInt(properties[OBSTACLE_COL]),
                  Integer.parseInt(properties[OBSTACLE_ROW]));
-         Entity entity = Entity.createObstacle(properties[OBSTACLE_ID],
+         Obstacle entity = new Obstacle(properties[OBSTACLE_ID],
                  pt, imageStore.getImageList(OBSTACLE_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == OBSTACLE_NUM_PROPERTIES;
    }
 
-   public boolean parseOre(String[] properties, WorldModel world,
+   public boolean parseOre(String[] properties,
                            ImageStore imageStore) {
       if (properties.length == ORE_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[ORE_COL]),
                  Integer.parseInt(properties[ORE_ROW]));
-         Entity entity = Entity.createOre(properties[ORE_ID],
+         Ore entity = new Ore(properties[ORE_ID],
                  pt, Integer.parseInt(properties[ORE_ACTION_PERIOD]),
                  imageStore.getImageList(ORE_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == ORE_NUM_PROPERTIES;
    }
 
-   public boolean parseSmith(String[] properties, WorldModel world,
+   public boolean parseSmith(String[] properties,
                              ImageStore imageStore) {
       if (properties.length == SMITH_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[SMITH_COL]),
                  Integer.parseInt(properties[SMITH_ROW]));
-         Entity entity = Entity.createBlacksmith(properties[SMITH_ID],
+         Blacksmith entity = new Blacksmith(properties[SMITH_ID],
                  pt, imageStore.getImageList(SMITH_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == SMITH_NUM_PROPERTIES;
    }
 
-   public boolean parseVein(String[] properties, WorldModel world,
+   public boolean parseVein(String[] properties,
                             ImageStore imageStore) {
       if (properties.length == VEIN_NUM_PROPERTIES) {
          Point pt = new Point(Integer.parseInt(properties[VEIN_COL]),
                  Integer.parseInt(properties[VEIN_ROW]));
-         Entity entity = Entity.createVein(properties[VEIN_ID],
+         Vein entity = new Vein(properties[VEIN_ID],
                  pt,
                  Integer.parseInt(properties[VEIN_ACTION_PERIOD]),
                  imageStore.getImageList(VEIN_KEY));
-         world.tryAddEntity(entity);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == VEIN_NUM_PROPERTIES;
@@ -292,23 +310,24 @@ final class WorldModel {
       if (properties.length > 0) {
          switch (properties[PROPERTY_KEY]) {
             case BGND_KEY:
-               return parseBackground(properties, this, imageStore);
+               return parseBackground(properties, imageStore);
             case MINER_KEY:
-               return parseMiner(properties, this, imageStore);
+               return parseMiner(properties, imageStore);
             case OBSTACLE_KEY:
-               return parseObstacle(properties, this, imageStore);
+               return parseObstacle(properties, imageStore);
             case ORE_KEY:
-               return parseOre(properties, this, imageStore);
+               return parseOre(properties, imageStore);
             case SMITH_KEY:
-               return parseSmith(properties, this, imageStore);
+               return parseSmith(properties, imageStore);
             case VEIN_KEY:
-               return parseVein(properties, this, imageStore);
+               return parseVein(properties, imageStore);
          }
       }
 
       return false;
    }
 
+   //CHANGE ENTITY TO ENTITYGENERAL INTERFACE
    public static Optional<Entity> nearestEntity(List<Entity> entities,
                                                 Point pos) {
       if (entities.isEmpty()) {

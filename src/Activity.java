@@ -32,26 +32,7 @@ public class Activity implements Action {
             this.entity.executeActivity(this.getWorld(),
                     this.getImageStore(), scheduler);
         }
-//        else if (this.entity instanceof MinerNotFull) {
-//            this.entity.executeActivity(this.getWorld(),
-//                    this.getImageStore(), scheduler);
-//        }
-//        else if (this.entity instanceof Ore) {
-//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-//                    scheduler);
-//        }
-//        else if (this.entity instanceof OreBlob) {
-//            this.entity.executeActivity(this.getWorld(),
-//                    this.getImageStore(), scheduler);
-//        }
-//        else if (this.entity instanceof Quake) {
-//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-//                    scheduler);
-//        }
-//        else if (this.entity instanceof Vein) {
-//            this.entity.executeActivity(this.getWorld(), this.getImageStore(),
-//                    scheduler);
-//        }
+
         else {
             throw new UnsupportedOperationException(
                     String.format("executeActivityAction not supported for %s",

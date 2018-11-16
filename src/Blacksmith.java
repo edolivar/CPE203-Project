@@ -4,9 +4,10 @@ import java.util.Random;
 
 import processing.core.PImage;
 
-public class Blacksmith implements Entity {
+public class Blacksmith extends Entity {
 
     //private EntityKind kind;
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -15,19 +16,21 @@ public class Blacksmith implements Entity {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
 
     //private static final Random rand = new Random();
 
     public Blacksmith(String id, Point position, List<PImage> images) {
         //this.kind = kind;
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
-        this.resourceLimit = 0;
-        this.resourceCount = 0;
-        this.actionPeriod = 0;
-        this.animationPeriod = 0;
+//        this.id = id;
+//        this.position = position;
+//        this.images = images;
+//        this.imageIndex = 0;
+//        this.resourceLimit = 0;
+//        this.resourceCount = 0;
+//        this.actionPeriod = 0;
+//        this.animationPeriod = 0;
+        super(id, 0, position, 0, images);
     }
 /*
         public EntityKind getKind(){
@@ -35,6 +38,7 @@ public class Blacksmith implements Entity {
         }
 */
 
+/*
     public Point getPosition() {
         return this.position;
     }
@@ -55,6 +59,8 @@ public class Blacksmith implements Entity {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
+
+*/
 
     public void scheduleActions(EventScheduler scheduler,
                          WorldModel world, ImageStore imageStore) {

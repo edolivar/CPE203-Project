@@ -3,7 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="87c6f9cb-803c-4736-b94f-95776c456a99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Activity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Animation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Background.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Blacksmith.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/EntityMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/EventComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/EventScheduler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerFull.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerNotFull.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Obstacle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Ore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/OreBlob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Quake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Vein.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/VirtualWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/WorldModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/WorldView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Blacksmith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blacksmith.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerFull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinerNotFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerNotFull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OreBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OreBlob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vein.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vein.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,20 +83,21 @@
     <session id="-2131304300">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
           <entry key="imagelist" value="1" />
-          <entry key="java" value="172" />
+          <entry key="java" value="230" />
           <entry key="sav" value="1" />
           <entry key="txt" value="1" />
         </counts>
@@ -74,18 +105,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="172" />
+          <entry key="JAVA" value="230" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4268" />
+          <entry key="dummy" value="9" />
+          <entry key="java" value="6759" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4268" />
+          <entry key="JAVA" value="6759" />
+          <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -94,55 +127,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity.java">
+        <entry file="file://$PROJECT_DIR$/src/AbstractEntityMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+            <state relative-caret-position="368">
+              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Activity.java">
+        <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="27" column="55" lean-forward="true" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+            <state relative-caret-position="1145">
+              <caret line="140" column="6" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+        <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EntityMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="97" selection-start-line="1" selection-start-column="97" selection-end-line="1" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Animation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Quake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1184">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="791">
+              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,28 +160,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Action.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2084">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+            <state relative-caret-position="236">
+              <caret line="148" column="44" lean-forward="true" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -181,10 +172,72 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EntityWithAnimation.java">
+        <entry file="file://$PROJECT_DIR$/src/AbstractEntityNoAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="46">
+              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1478#1479#0" expanded="true" />
+                <element signature="e#1517#1518#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Vein.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1449">
+              <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1576">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Quake.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="88" column="6" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AbstractEntityAnimation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-240">
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -222,7 +275,6 @@
       <find>getAnimatio</find>
       <find>put</find>
       <find>pendingEvents</find>
-      <find>tryAdd</find>
       <find>EntityGeneral</find>
       <find>getEntities()</find>
       <find>Activity</find>
@@ -231,6 +283,7 @@
       <find>EntityMain</find>
       <find>processLine</find>
       <find>Entity</find>
+      <find>tryAdd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,22 +304,28 @@
         <option value="$PROJECT_DIR$/src/Event.java" />
         <option value="$PROJECT_DIR$/src/WorldView.java" />
         <option value="$PROJECT_DIR$/src/VirtualWorld.java" />
-        <option value="$PROJECT_DIR$/src/EntityMain.java" />
-        <option value="$PROJECT_DIR$/src/Entity.java" />
-        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
-        <option value="$PROJECT_DIR$/src/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/EntityClass.java" />
-        <option value="$PROJECT_DIR$/src/MinerFull.java" />
-        <option value="$PROJECT_DIR$/src/MinerNotFull.java" />
         <option value="$PROJECT_DIR$/src/EntityWithAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Ore.java" />
-        <option value="$PROJECT_DIR$/src/Vein.java" />
-        <option value="$PROJECT_DIR$/src/Quake.java" />
         <option value="$PROJECT_DIR$/src/WorldModel.java" />
         <option value="$PROJECT_DIR$/src/EventScheduler.java" />
-        <option value="$PROJECT_DIR$/src/Animation.java" />
-        <option value="$PROJECT_DIR$/src/OreBlob.java" />
+        <option value="$PROJECT_DIR$/src/EntityInterface.java" />
+        <option value="$PROJECT_DIR$/src/AbstractEntity.java" />
+        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
+        <option value="$PROJECT_DIR$/src/Obstacle.java" />
+        <option value="$PROJECT_DIR$/src/EntityMain.java" />
+        <option value="$PROJECT_DIR$/src/AbstractMiner.java" />
+        <option value="$PROJECT_DIR$/src/AbstractEntityAnimation.java" />
+        <option value="$PROJECT_DIR$/src/AbstractEntityNoAnimation.java" />
         <option value="$PROJECT_DIR$/src/Activity.java" />
+        <option value="$PROJECT_DIR$/src/Vein.java" />
+        <option value="$PROJECT_DIR$/src/Ore.java" />
+        <option value="$PROJECT_DIR$/src/Animation.java" />
+        <option value="$PROJECT_DIR$/src/Quake.java" />
+        <option value="$PROJECT_DIR$/src/AbstractEntityMain.java" />
+        <option value="$PROJECT_DIR$/src/MinerFull.java" />
+        <option value="$PROJECT_DIR$/src/Entity.java" />
+        <option value="$PROJECT_DIR$/src/MinerNotFull.java" />
+        <option value="$PROJECT_DIR$/src/OreBlob.java" />
       </list>
     </option>
   </component>
@@ -390,7 +449,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -408,16 +466,17 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541833591849" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542346074281" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -476,7 +535,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280255" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22770701" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22770701" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43949044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -546,13 +605,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EntityClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ActionClass.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -579,20 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vein.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1403">
-          <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorldView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1205">
@@ -614,34 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7544">
-          <caret line="345" column="10" selection-start-line="345" selection-start-column="10" selection-end-line="345" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -652,33 +666,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        <state relative-caret-position="-76">
+          <caret line="288" selection-start-line="288" selection-end-line="288" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
+    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2084">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        <state relative-caret-position="-1918">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Quake.java">
+    <entry file="file://$PROJECT_DIR$/src/EntityInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1184">
+        <state relative-caret-position="69">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EntityMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractEntityMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractEntityNoAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1576">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -686,38 +762,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityMain.java">
+    <entry file="file://$PROJECT_DIR$/src/Vein.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="97" selection-start-line="1" selection-start-column="97" selection-end-line="1" selection-end-column="97" />
+        <state relative-caret-position="1449">
+          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractEntityAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        <state relative-caret-position="372">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Animation.java">
+    <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="1145">
+          <caret line="140" column="6" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Activity.java">
+    <entry file="file://$PROJECT_DIR$/src/Quake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="27" column="55" lean-forward="true" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+        <state relative-caret-position="547">
+          <caret line="88" column="6" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action.java">
+    <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="791">
+          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="148" column="44" lean-forward="true" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

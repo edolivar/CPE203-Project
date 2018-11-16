@@ -3,8 +3,9 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
+public class MinerNotFull extends AbstractEntityAnimation {
 
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -13,6 +14,7 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
 
     //private static final Random rand = new Random();
 
@@ -20,16 +22,10 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
                         Point position, int actionPeriod, int animationPeriod,
                         List<PImage> images) {
         //this.kind = kind;
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
-        this.resourceLimit = resourceLimit;
-        this.resourceCount = 0;
-        this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
+        super(id, resourceLimit, position, actionPeriod, animationPeriod, images);
     }
 
+    /*
     public Point getPosition() {
         return this.position;
     }
@@ -53,9 +49,10 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
 
+    */
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler)
     {
-        Optional<Entity> notFullTarget = world.findNearest(this.position,
+        Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
                 Ore.class);
 
         if (!notFullTarget.isPresent() ||
@@ -64,7 +61,7 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
         {
             scheduler.scheduleEvent(this,
                     new Activity(this, world, imageStore),
-                    this.actionPeriod);
+                    this.getActionPeriod());
         }
     }
 
@@ -72,9 +69,10 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
                                  Entity target, EventScheduler scheduler)
     {
         //getPosition()
-        if (adjacent(this.position, target.getPosition()))
+        if (adjacent(this.getPosition(), target.getPosition()))
         {
-            this.resourceCount += 1;
+            //CHECK
+            setResourceCount(this.getResourceCount() + 1);
             world.removeEntity(target);
             scheduler.unscheduleAllEvents(target);
 
@@ -85,7 +83,7 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
             //getPosition()
             Point nextPos = this.nextPositionMiner(world, target.getPosition());
 
-            if (!this.position.equals(nextPos))
+            if (!this.getPosition().equals(nextPos))
             {
                 Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())
@@ -102,11 +100,11 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
     public boolean transformNotFull(WorldModel world,
                                     EventScheduler scheduler, ImageStore imageStore)
     {
-        if (this.resourceCount >= this.resourceLimit)
+        if (this.getResourceCount() >= this.getResourceLimit())
         {
-            MinerFull miner = new MinerFull(this.id, this.resourceLimit,
-                    this.position, this.actionPeriod, this.animationPeriod,
-                    this.images);
+            MinerFull miner = new MinerFull(this.getID(), this.getResourceLimit(),
+                    this.getPosition(), this.getActionPeriod(), this.getAnimationPeriod(),
+                    this.getImages());
 
             world.removeEntity(this);
             scheduler.unscheduleAllEvents(this);
@@ -122,17 +120,17 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
 
     public Point nextPositionMiner(WorldModel world,
                                    Point destPos) {
-        int horiz = Integer.signum(destPos.x - this.position.x);
-        Point newPos = new Point(this.position.x + horiz,
-                this.position.y);
+        int horiz = Integer.signum(destPos.x - this.getPosition().x);
+        Point newPos = new Point(this.getPosition().x + horiz,
+                this.getPosition().y);
 
         if (horiz == 0 || world.isOccupied(newPos)) {
-            int vert = Integer.signum(destPos.y - this.position.y);
-            newPos = new Point(this.position.x,
-                    this.position.y + vert);
+            int vert = Integer.signum(destPos.y - this.getPosition().y);
+            newPos = new Point(this.getPosition().x,
+                    this.getPosition().y + vert);
 
             if (vert == 0 || world.isOccupied(newPos)) {
-                newPos = this.position;
+                newPos = this.getPosition();
             }
         }
         return newPos;
@@ -144,7 +142,7 @@ public class MinerNotFull implements Entity, EntityMain, EntityWithAnimation {
     {
                 scheduler.scheduleEvent(this,
                         new Activity(this, world, imageStore),
-                        this.actionPeriod);
+                        this.getActionPeriod());
                 scheduler.scheduleEvent(this,
                         new Animation(this, 0), this.getAnimationPeriod());
     }

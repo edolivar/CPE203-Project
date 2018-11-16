@@ -2,8 +2,9 @@ import processing.core.PImage;
 
 import java.util.List;
 
-public class Quake implements Entity, EntityMain, EntityWithAnimation {
+public class Quake extends AbstractEntityAnimation{
 
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -12,15 +13,17 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
     private static final int QUAKE_ANIMATION_REPEAT_COUNT = 10;
-    private final String QUAKE_ID = "quake";
-    private final int QUAKE_ACTION_PERIOD = 1100;
-    private final int QUAKE_ANIMATION_PERIOD = 100;
+    private static final String QUAKE_ID = "quake";
+    private static final int QUAKE_ACTION_PERIOD = 1100;
+    private static final int QUAKE_ANIMATION_PERIOD = 100;
 
     //private static final Random rand = new Random();
 
     public Quake(Point position, List<PImage> images) {
         //this.kind = kind;
+        /*
         this.id = QUAKE_ID;
         this.position = position;
         this.images = images;
@@ -29,6 +32,8 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
         this.resourceCount = 0;
         this.actionPeriod = QUAKE_ACTION_PERIOD;
         this.animationPeriod = QUAKE_ANIMATION_PERIOD;
+        */
+        super(QUAKE_ID, 0, position, QUAKE_ACTION_PERIOD, QUAKE_ANIMATION_PERIOD, images);
     }
 /*
         public EntityKind getKind(){
@@ -36,6 +41,7 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
         }
 */
 
+    /*
     public Point getPosition() {
         return this.position;
     }
@@ -58,6 +64,7 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
+    */
 
     public void executeActivity(WorldModel world,
                                      ImageStore imageStore, EventScheduler scheduler)
@@ -66,16 +73,18 @@ public class Quake implements Entity, EntityMain, EntityWithAnimation {
         world.removeEntity(this);
     }
 
+    /*
     //animationPeriod
     public void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore)
     {
-                scheduler.scheduleEvent(this,
-                        new Activity(this, world, imageStore),
-                        this.actionPeriod);
-                scheduler.scheduleEvent(this,
-                        new Animation(this, QUAKE_ANIMATION_REPEAT_COUNT),
-                        this.animationPeriod);
+        scheduler.scheduleEvent(this,
+                new Activity(this, world, imageStore),
+                this.actionPeriod);
+        scheduler.scheduleEvent(this,
+                new Animation(this, QUAKE_ANIMATION_REPEAT_COUNT),
+                this.getAnimationPeriod());
 
     }
+    */
 }

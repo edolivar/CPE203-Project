@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-public class Vein implements Entity, EntityMain{
+public class Vein extends AbstractEntityNoAnimation{
 
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -14,6 +15,7 @@ public class Vein implements Entity, EntityMain{
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
 
     private static final Random rand = new Random();
 
@@ -26,6 +28,7 @@ public class Vein implements Entity, EntityMain{
 
     public Vein(String id, Point position, int actionPeriod,  List<PImage> images) {
         //this.kind = kind;
+        /*
         this.id = id;
         this.position = position;
         this.images = images;
@@ -34,6 +37,9 @@ public class Vein implements Entity, EntityMain{
         this.resourceCount = 0;
         this.actionPeriod = actionPeriod;
         this.animationPeriod = 0;
+        */
+
+        super(id, 0, position, actionPeriod, images);
     }
 /*
         public EntityKind getKind(){
@@ -41,6 +47,7 @@ public class Vein implements Entity, EntityMain{
         }
 */
 
+    /*
     public Point getPosition() {
         return this.position;
     }
@@ -61,15 +68,16 @@ public class Vein implements Entity, EntityMain{
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
+    */
 
     public void executeActivity(WorldModel world,
                                     ImageStore imageStore, EventScheduler scheduler)
     {
-        Optional<Point> openPt = world.findOpenAround(this.position);
+        Optional<Point> openPt = world.findOpenAround(this.getPosition());
 
         if (openPt.isPresent())
         {
-            Ore ore = new Ore(ORE_ID_PREFIX + this.id,
+            Ore ore = new Ore(ORE_ID_PREFIX + this.getID(),
                     openPt.get(), ORE_CORRUPT_MIN +
                             rand.nextInt(ORE_CORRUPT_MAX - ORE_CORRUPT_MIN),
                     imageStore.getImageList(ORE_KEY));
@@ -79,14 +87,16 @@ public class Vein implements Entity, EntityMain{
 
         scheduler.scheduleEvent(this,
                 new Activity(this, world, imageStore),
-                this.actionPeriod);
+                this.getActionPeriod());
     }
 
+    /*
     public void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore) {
                 scheduler.scheduleEvent(this,
                         new Activity(this, world, imageStore),
                         this.actionPeriod);
     }
+    */
 
 }

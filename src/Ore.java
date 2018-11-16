@@ -2,9 +2,10 @@ import processing.core.PImage;
 import java.util.Random;
 import java.util.List;
 
-public class Ore implements Entity, EntityMain {
+public class Ore extends AbstractEntityNoAnimation {
 
     //private EntityKind kind;
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -13,6 +14,7 @@ public class Ore implements Entity, EntityMain {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
 
     private static final Random rand = new Random();
 
@@ -26,6 +28,7 @@ public class Ore implements Entity, EntityMain {
 
     public Ore(String id, Point position, int actionPeriod, List<PImage> images) {
         //this.kind = kind;
+        /*
         this.id = id;
         this.position = position;
         this.images = images;
@@ -34,6 +37,8 @@ public class Ore implements Entity, EntityMain {
         this.resourceCount = 0;
         this.actionPeriod = actionPeriod;
         this.animationPeriod = 0;
+        */
+        super(id, 0, position, actionPeriod, images);
     }
 /*
         public EntityKind getKind(){
@@ -41,6 +46,7 @@ public class Ore implements Entity, EntityMain {
         }
 */
 
+    /*
     public Point getPosition() {
         return this.position;
     }
@@ -65,17 +71,18 @@ public class Ore implements Entity, EntityMain {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
+    */
 
     public void executeActivity(WorldModel world,
                                           ImageStore imageStore, EventScheduler scheduler)
     {
-        Point pos = this.position;  // store current position before removing
+        Point pos = this.getPosition();  // store current position before removing
 
         world.removeEntity(this);
         scheduler.unscheduleAllEvents(this);
 
-        OreBlob blob = new OreBlob(this.id + BLOB_ID_SUFFIX,
-                pos, this.actionPeriod / BLOB_PERIOD_SCALE,
+        OreBlob blob = new OreBlob(this.getID() + BLOB_ID_SUFFIX,
+                pos, this.getActionPeriod() / BLOB_PERIOD_SCALE,
                 BLOB_ANIMATION_MIN +
                         rand.nextInt(BLOB_ANIMATION_MAX - BLOB_ANIMATION_MIN),
                 imageStore.getImageList(BLOB_KEY));
@@ -84,11 +91,13 @@ public class Ore implements Entity, EntityMain {
         blob.scheduleActions(scheduler, world, imageStore);
     }
 
+    /*
     public void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore) {
         scheduler.scheduleEvent(this,
                 new Activity(this, world, imageStore),
-                this.actionPeriod);
+                this.getActionPeriod());
     }
+    */
 
 }

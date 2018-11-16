@@ -2,9 +2,10 @@ import processing.core.PImage;
 
 import java.util.List;
 
-public class Obstacle implements Entity {
+public class Obstacle extends Entity {
 
     //private EntityKind kind
+    /*
     private String id;
     private Point position;
     private List<PImage> images;
@@ -13,10 +14,12 @@ public class Obstacle implements Entity {
     private int resourceCount;
     private int actionPeriod;
     private int animationPeriod;
+    */
 
     //private static final Random rand = new Random();
     public Obstacle(String id, Point position, List<PImage> images) {
         //this.kind = kind;
+        /*
         this.id = id;
         this.position = position;
         this.images = images;
@@ -25,6 +28,8 @@ public class Obstacle implements Entity {
         this.resourceCount = 0;
         this.actionPeriod = 0;
         this.animationPeriod = 0;
+        */
+        super(id, 0, position, 0, images);
     }
 /*
         public EntityKind getKind(){
@@ -32,6 +37,7 @@ public class Obstacle implements Entity {
         }
 */
 
+    /*
     public Point getPosition() {
         return this.position;
     }
@@ -52,6 +58,7 @@ public class Obstacle implements Entity {
         return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
                 (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
     }
+    */
 
     public void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore) {

@@ -1,11 +1,11 @@
 public class Activity implements Action {
 
-    private EntityMain entity;
+    private AbstractEntityMain entity;
     private WorldModel world;
     private ImageStore imageStore;
     private int repeatCount;
 
-    public Activity(EntityMain entity, WorldModel world,
+    public Activity(AbstractEntityMain entity, WorldModel world,
                     ImageStore imageStore) {
         this.entity = entity;
         this.world = world;
@@ -13,7 +13,7 @@ public class Activity implements Action {
         this.repeatCount = 0;
     }
 
-    public EntityMain getEntity(){
+    public AbstractEntityMain getEntity(){
         return this.entity;
     }
 

@@ -3,7 +3,7 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class MinerNotFull extends AbstractEntityAnimation {
+public class MinerNotFull extends AbstractMiner {
 
     /*
     private String id;
@@ -118,6 +118,7 @@ public class MinerNotFull extends AbstractEntityAnimation {
         return false;
     }
 
+    /*
     public Point nextPositionMiner(WorldModel world,
                                    Point destPos) {
         int horiz = Integer.signum(destPos.x - this.getPosition().x);
@@ -135,8 +136,10 @@ public class MinerNotFull extends AbstractEntityAnimation {
         }
         return newPos;
     }
+    */
 
     //animationPeriod
+    /*
     public void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore)
     {
@@ -146,5 +149,6 @@ public class MinerNotFull extends AbstractEntityAnimation {
                 scheduler.scheduleEvent(this,
                         new Animation(this, 0), this.getAnimationPeriod());
     }
+    */
 
 }

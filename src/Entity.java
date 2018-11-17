@@ -12,11 +12,9 @@ public abstract class Entity {
     private int resourceLimit;
     private int resourceCount;
     private int actionPeriod;
-    //private int animationPeriod;
 
     public Entity(String id, int resourceLimit,
                          Point position, int actionPeriod, List<PImage> images) {
-        //this.kind = kind;
         this.id = id;
         this.position = position;
         this.images = images;
@@ -24,7 +22,6 @@ public abstract class Entity {
         this.resourceLimit = resourceLimit;
         this.resourceCount = 0;
         this.actionPeriod = actionPeriod;
-        //this.animationPeriod = animationPeriod;
     }
 
     protected String getID() { return this.id; }
@@ -44,8 +41,6 @@ public abstract class Entity {
     protected int getImageIndex() {
         return this.imageIndex;
     }
-
-    //PImage getCurrentImage(Object entity);
 
     protected void nextImage() {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();

@@ -3,7 +3,7 @@ import java.util.Optional;
 import java.util.Random;
 import processing.core.PImage;
 
-public class OreBlob extends AbstractEntityAnimation {//implements Entity, EntityMain, EntityWithAnimation
+public class OreBlob extends AbstractEntityAnimation {
 
     private static final Random rand = new Random();
 

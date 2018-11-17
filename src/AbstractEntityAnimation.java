@@ -2,7 +2,7 @@ import processing.core.PImage;
 
 import java.util.List;
 
-//MinerFull, MinerNotFull, OreBlob, and Quake are the subclasses
+// AbstractMiner, OreBlob, and Quake are the subclasses
 public abstract class AbstractEntityAnimation extends AbstractEntityMain{
 
     private int animationPeriod;
@@ -10,20 +10,15 @@ public abstract class AbstractEntityAnimation extends AbstractEntityMain{
     public AbstractEntityAnimation(String id, int resourceLimit,
                         Point position, int actionPeriod, int animationPeriod,
                         List<PImage> images) {
-        //this.kind = kind;
-        /*
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
-        this.resourceLimit = resourceLimit;
-        this.resourceCount = 0;
-        this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
-        */
+
         super(id, resourceLimit, position, actionPeriod, images);
         this.animationPeriod = animationPeriod;
     }
+
+    /*
+    protected abstract void executeActivity(WorldModel world,
+                                            ImageStore imageStore, EventScheduler scheduler);
+    */
 
     int getAnimationPeriod(){ return this.animationPeriod; }
 

@@ -2,6 +2,7 @@ import processing.core.PImage;
 
 import java.util.List;
 
+// EntityMain, Blacksmith, and Obstacle are the subclasses
 public abstract class Entity {
 
     private String id;

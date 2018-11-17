@@ -10,6 +10,11 @@ public abstract class AbstractEntityNoAnimation extends AbstractEntityMain{
         super(id, resourceLimit, position, actionPeriod, images);
     }
 
+    /*
+    protected abstract void executeActivity(WorldModel world,
+                                            ImageStore imageStore, EventScheduler scheduler);
+    */
+
     protected void scheduleActions(EventScheduler scheduler,
                                    WorldModel world, ImageStore imageStore) {
         scheduler.scheduleEvent(this,

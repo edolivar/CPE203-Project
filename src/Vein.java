@@ -37,4 +37,8 @@ public class Vein extends AbstractEntityNoAnimation{
                 this.getActionPeriod());
     }
 
+    public <R> R accept (EntityVisitor<R> visitor) {
+        return visitor.visit(this);
+    }
+
 }

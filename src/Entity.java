@@ -64,4 +64,6 @@ public abstract class Entity {
     protected abstract void scheduleActions(EventScheduler scheduler,
                                 WorldModel world, ImageStore imageStore);
 
+    public abstract <R> R accept (EntityVisitor<R> visitor);
+
 }

@@ -20,4 +20,8 @@ public class Quake extends AbstractEntityAnimation{
         world.removeEntity(this);
     }
 
+    public <R> R accept (EntityVisitor<R> visitor) {
+        return visitor.visit(this);
+    }
+
 }

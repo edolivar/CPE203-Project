@@ -72,4 +72,8 @@ public class MinerFull extends AbstractMiner {
         miner.scheduleActions(scheduler, world, imageStore);
     }
 
+    public <R> R accept (EntityVisitor<R> visitor) {
+        return visitor.visit(this);
+    }
+
 }

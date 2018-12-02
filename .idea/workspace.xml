@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="87c6f9cb-803c-4736-b94f-95776c456a99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Blacksmith.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Blacksmith.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerFull.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerFull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerNotFull.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/MinerNotFull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Obstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Obstacle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Ore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Ore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/OreBlob.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/OreBlob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Quake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Quake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Vein.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project1_IntelliJ/Vein.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Blacksmith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blacksmith.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MinerFull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinerFull.java" afterDir="false" />
@@ -12,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/src/OreBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OreBlob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vein.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vein.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WorldModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +85,7 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="imagelist" value="1" />
-          <entry key="java" value="293" />
+          <entry key="java" value="352" />
           <entry key="sav" value="1" />
           <entry key="txt" value="1" />
         </counts>
@@ -83,19 +93,19 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="293" />
+          <entry key="JAVA" value="352" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="java" value="7512" />
+          <entry key="java" value="8568" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7512" />
+          <entry key="JAVA" value="8568" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
@@ -107,25 +117,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state relative-caret-position="259">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
-                <element signature="e#2385#2386#0" expanded="true" />
-                <element signature="e#2427#2428#0" expanded="true" />
+                <element signature="e#2390#2391#0" expanded="true" />
+                <element signature="e#2450#2451#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
+        <entry file="file://$PROJECT_DIR$/src/MinerFullEntityVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="161">
+              <caret line="7" column="1" lean-forward="true" selection-start-column="36" selection-end-line="7" selection-end-column="1" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2710#2711#0" expanded="true" />
-                <element signature="e#2752#2753#0" expanded="true" />
+                <element signature="e#129#130#0" expanded="true" />
+                <element signature="e#156#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,60 +143,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Vein.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="736">
+              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#1375#1376#0" expanded="true" />
+                <element signature="e#1431#1432#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EntityVisitor.java">
+        <entry file="file://$PROJECT_DIR$/src/BlacksmithEntityVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="69">
+              <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ore.java">
+        <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="276">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding>
-                <element signature="e#1367#1368#0" expanded="true" />
-                <element signature="e#1409#1410#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3137#3138#0" expanded="true" />
-                <element signature="e#3179#3180#0" expanded="true" />
+                <element signature="e#220#221#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,36 +189,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Quake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="230">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-                <element signature="e#821#822#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Point.java">
+        <entry file="file://$PROJECT_DIR$/src/Ore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="282">
+              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <folding>
+                <element signature="e#1360#1361#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="249">
+              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
               <folding>
-                <element signature="e#220#221#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#485#486#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2718#2719#0" expanded="true" />
+                <element signature="e#2778#2779#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="93" column="26" lean-forward="true" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3130#3131#0" expanded="true" />
+                <element signature="e#3185#3186#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -243,8 +251,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>executeOre</find>
-      <find>createQuake</find>
       <find>createVein</find>
       <find>createOre</find>
       <find>findNearest</find>
@@ -273,6 +279,8 @@
       <find>Entity</find>
       <find>tryAdd</find>
       <find>findNear</find>
+      <find>instance</find>
+      <find>new</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -294,7 +302,6 @@
         <option value="$PROJECT_DIR$/src/VirtualWorld.java" />
         <option value="$PROJECT_DIR$/src/EntityClass.java" />
         <option value="$PROJECT_DIR$/src/EntityWithAnimation.java" />
-        <option value="$PROJECT_DIR$/src/WorldModel.java" />
         <option value="$PROJECT_DIR$/src/EventScheduler.java" />
         <option value="$PROJECT_DIR$/src/EntityInterface.java" />
         <option value="$PROJECT_DIR$/src/AbstractEntity.java" />
@@ -306,16 +313,26 @@
         <option value="$PROJECT_DIR$/src/AbstractEntityNoAnimation.java" />
         <option value="$PROJECT_DIR$/src/AbstractEntityAnimation.java" />
         <option value="$PROJECT_DIR$/src/Action.java" />
+        <option value="$PROJECT_DIR$/src/EntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/AllFalseEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/MinerFullEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/WorldModel.java" />
+        <option value="$PROJECT_DIR$/src/BlacksmithEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/MinerNotFullEntityVisitor.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
+        <option value="$PROJECT_DIR$/src/ObstacleEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/OreEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/OreBlobEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/QuakeEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/VeinEntityVisitor.java" />
+        <option value="$PROJECT_DIR$/src/Ore.java" />
+        <option value="$PROJECT_DIR$/src/Vein.java" />
+        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
+        <option value="$PROJECT_DIR$/src/MinerFull.java" />
+        <option value="$PROJECT_DIR$/src/MinerNotFull.java" />
+        <option value="$PROJECT_DIR$/src/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/OreBlob.java" />
         <option value="$PROJECT_DIR$/src/Quake.java" />
-        <option value="$PROJECT_DIR$/src/Vein.java" />
-        <option value="$PROJECT_DIR$/src/Ore.java" />
-        <option value="$PROJECT_DIR$/src/Obstacle.java" />
-        <option value="$PROJECT_DIR$/src/MinerNotFull.java" />
-        <option value="$PROJECT_DIR$/src/MinerFull.java" />
-        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
-        <option value="$PROJECT_DIR$/src/EntityVisitor.java" />
       </list>
     </option>
   </component>
@@ -460,7 +477,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542351045360" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543714869356" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -516,7 +533,7 @@
     <frame x="22" y="23" width="1186" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26835665" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26835665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -525,7 +542,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280255" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22770701" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22770701" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43949044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -563,22 +580,8 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ActionClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/Functions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/imagelist">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Viewport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EntityClass.java" />
     <entry file="file://$PROJECT_DIR$/ActionClass.txt">
@@ -610,41 +613,10 @@
     <entry file="file://$PROJECT_DIR$/src/EntityInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/EntityWithAnimation.java" />
     <entry file="file://$PROJECT_DIR$/src/EntityMain.java" />
-    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractEntityAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractEntityMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstractEntityNoAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractMiner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,30 +627,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="-84">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Background.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-47">
           <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
@@ -692,119 +650,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="-1188">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
+        <state relative-caret-position="24">
           <caret line="111" column="38" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
+    <entry file="file://$PROJECT_DIR$/src/AbstractMiner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+        <state relative-caret-position="-46">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3137#3138#0" expanded="true" />
-            <element signature="e#3179#3180#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="1">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Quake.java">
+    <entry file="file://$PROJECT_DIR$/src/Viewport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vein.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2710#2711#0" expanded="true" />
-            <element signature="e#2752#2753#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="299">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -815,15 +700,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+    <entry file="file://$PROJECT_DIR$/src/AllFalseEntityVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ObstacleEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="1" lean-forward="true" selection-start-column="35" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuakeEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding>
+            <element signature="e#121#122#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VeinEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractEntityAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractEntityMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OreBlobEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OreEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerNotFullEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlacksmithEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerFullEntityVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="1" lean-forward="true" selection-start-column="36" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#129#130#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
             <element signature="e#220#221#0" expanded="true" />
             <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#2390#2391#0" expanded="true" />
+            <element signature="e#2450#2451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerNotFull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2718#2719#0" expanded="true" />
+            <element signature="e#2778#2779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding>
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OreBlob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="93" column="26" lean-forward="true" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3130#3131#0" expanded="true" />
+            <element signature="e#3185#3186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Quake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vein.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="e#1375#1376#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
           </folding>
         </state>
       </provider>

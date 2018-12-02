@@ -35,6 +35,10 @@ public class Ore extends AbstractEntityNoAnimation {
         blob.scheduleActions(scheduler, world, imageStore);
     }
 
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new OreEntityVisitor());
+    }
+
     public <R> R accept (EntityVisitor<R> visitor) {
         return visitor.visit(this);
     }

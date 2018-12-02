@@ -14,6 +14,10 @@ public class Blacksmith extends Entity {
                          WorldModel world, ImageStore imageStore) {
     }
 
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new BlacksmithEntityVisitor());
+    }
+
     public <R> R accept (EntityVisitor<R> visitor) {
         return visitor.visit(this);
     }

@@ -15,7 +15,7 @@ public class MinerNotFull extends AbstractMiner {
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler)
     {
         Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
-                Ore.class);
+                new Ore(null, null, 0, null));
 
         if (!notFullTarget.isPresent() ||
                 !this.moveToNotFull(world, notFullTarget.get(), scheduler) ||
@@ -78,6 +78,10 @@ public class MinerNotFull extends AbstractMiner {
         }
 
         return false;
+    }
+
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new MinerNotFullEntityVisitor());
     }
 
     public <R> R accept (EntityVisitor<R> visitor) {

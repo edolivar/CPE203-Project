@@ -16,7 +16,7 @@ public class MinerFull extends AbstractMiner {
                                          ImageStore imageStore, EventScheduler scheduler)
     {
         Optional<Entity> fullTarget = world.findNearest(this.getPosition(),
-                Blacksmith.class);
+                new Blacksmith(null, null, null));
 
         if (fullTarget.isPresent() &&
                 this.moveToFull(world, fullTarget.get(), scheduler))
@@ -70,6 +70,10 @@ public class MinerFull extends AbstractMiner {
 
         world.addEntity(miner);
         miner.scheduleActions(scheduler, world, imageStore);
+    }
+
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new MinerFullEntityVisitor());
     }
 
     public <R> R accept (EntityVisitor<R> visitor) {

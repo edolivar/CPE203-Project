@@ -12,6 +12,10 @@ public class Obstacle extends Entity {
                                 WorldModel world, ImageStore imageStore) {
     }
 
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new ObstacleEntityVisitor());
+    }
+
     public <R> R accept (EntityVisitor<R> visitor) {
         return visitor.visit(this);
     }

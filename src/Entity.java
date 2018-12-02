@@ -66,4 +66,6 @@ public abstract class Entity {
 
     public abstract <R> R accept (EntityVisitor<R> visitor);
 
+    protected abstract Boolean instanceCheck(Entity e);
+
 }

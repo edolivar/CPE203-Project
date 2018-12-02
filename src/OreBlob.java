@@ -16,7 +16,7 @@ public class OreBlob extends AbstractEntityAnimation {
     public void executeActivity(WorldModel world,
                                        ImageStore imageStore, EventScheduler scheduler)
     {
-        Optional<Entity> blobTarget = world.findNearest(this.getPosition(), Vein.class);
+        Optional<Entity> blobTarget = world.findNearest(this.getPosition(), new Vein(null, null, 0, null));
         long nextPeriod = this.getActionPeriod();
 
         if (blobTarget.isPresent())
@@ -89,6 +89,10 @@ public class OreBlob extends AbstractEntityAnimation {
         }
 
         return newPos;
+    }
+
+    public Boolean instanceCheck (Entity e) {
+        return e.accept(new OreBlobEntityVisitor());
     }
 
     public <R> R accept (EntityVisitor<R> visitor) {

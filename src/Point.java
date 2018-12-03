@@ -28,4 +28,12 @@ final class Point
       result = result * 31 + y;
       return result;
    }
+
+   public int distanceSquared(Point p2) {
+      int deltaX = this.x - p2.x;
+      int deltaY = this.y - p2.y;
+
+      return deltaX * deltaX + deltaY * deltaY;
+   }
+
 }

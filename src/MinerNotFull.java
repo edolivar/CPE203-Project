@@ -2,6 +2,8 @@ import processing.core.PImage;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class MinerNotFull extends AbstractMiner {
 
@@ -43,9 +45,24 @@ public class MinerNotFull extends AbstractMiner {
         else
         {
             //getPosition()
-            Point nextPos = this.nextPositionMiner(world, target.getPosition());
+            //Point nextPos = this.nextPositionMiner(world, target.getPosition());
 
-            if (!this.getPosition().equals(nextPos))
+            AstarPathingStrategy singleStep = new AstarPathingStrategy();
+            Predicate<Point> canPassThrough = (point) -> world.withinBounds(point) && !world.isOccupied(point);
+            BiPredicate<Point, Point> withinReach = (point1, point2) -> adjacent(point1, point2);
+
+            List<Point> path = singleStep.computePath(this.getPosition(), target.getPosition(), canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);
+            Point nextPos = null;
+            if (path.size() != 0) {
+                nextPos = path.get(0);
+            }
+            /*
+            else {
+                return false;
+            }
+            */
+
+            if (nextPos != null)
             {
                 Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())

@@ -90,7 +90,7 @@ final class WorldModel {
       List<Entity> ofType = new LinkedList<>();
       for (Entity entity : entities) {
          //entity.getClass() == kind
-         if (target.instanceCheck(entity)) {
+         if (entity.instanceCheck(target)) {
             ofType.add(entity);
          }
       }
@@ -336,10 +336,10 @@ final class WorldModel {
          return Optional.empty();
       } else {
          Entity nearest = entities.get(0);
-         int nearestDistance = distanceSquared(nearest.getPosition(), pos);
+         int nearestDistance = nearest.getPosition().distanceSquared(pos);
 
          for (Entity other : entities) {
-            int otherDistance = distanceSquared(other.getPosition(), pos);
+            int otherDistance = other.getPosition().distanceSquared(pos);
 
             if (otherDistance < nearestDistance) {
                nearest = other;
@@ -349,13 +349,6 @@ final class WorldModel {
 
          return Optional.of(nearest);
       }
-   }
-
-   public static int distanceSquared(Point p1, Point p2) {
-      int deltaX = p1.x - p2.x;
-      int deltaY = p1.y - p2.y;
-
-      return deltaX * deltaX + deltaY * deltaY;
    }
 
 }

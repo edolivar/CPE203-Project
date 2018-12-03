@@ -28,16 +28,18 @@ public class Activity implements Action {
     public void executeAction(EventScheduler scheduler)
     {
         /*switch (this.entity.getClass()this.entity.getKind())*/
-        if (this.entity instanceof AbstractEntityMain) {
+        //if (this.entity instanceof AbstractEntityMain) {
             this.entity.executeActivity(this.getWorld(),
                     this.getImageStore(), scheduler);
-        }
+        //}
 
+        /*
         else {
             throw new UnsupportedOperationException(
                     String.format("executeActivityAction not supported for %s",
                             this.getEntity().getClass()));
         }
+        */
     }
 
 

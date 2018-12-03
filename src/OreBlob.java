@@ -3,6 +3,9 @@ import java.util.Optional;
 import java.util.Random;
 import processing.core.PImage;
 
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
 public class OreBlob extends AbstractEntityAnimation {
 
     private static final Random rand = new Random();
@@ -41,6 +44,10 @@ public class OreBlob extends AbstractEntityAnimation {
     public boolean moveToOreBlob(WorldModel world,
                                         Entity target, EventScheduler scheduler)
     {
+        AstarPathingStrategy singleStep = new AstarPathingStrategy();
+        Predicate<Point> canPassThrough = (point) -> world.withinBounds(point) && !world.isOccupied(point);
+        BiPredicate<Point, Point> withinReach = (point1, point2) -> adjacent(point1, point2);
+
         if (adjacent(this.getPosition(), target.getPosition()))
         {
             world.removeEntity(target);
@@ -49,9 +56,21 @@ public class OreBlob extends AbstractEntityAnimation {
         }
         else
         {
-            Point nextPos = nextPositionOreBlob(world, target.getPosition());
+            //if path is empty, nextPost is the currentPos. return false.
+            List<Point> path = singleStep.computePath(this.getPosition(), target.getPosition(), canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);
+            Point nextPos = null;
+            if (path.size() != 0) {
+                nextPos = path.get(0);
+            }
+            /*
+            else {
+                return false;
+            }
+            */
 
-            if (!this.getPosition().equals(nextPos))
+            //Point nextPos = nextPositionOreBlob(world, target.getPosition());
+            //!this.getPosition().equals(nextPos)
+            if (nextPos != null)
             {
                 Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())
@@ -62,6 +81,7 @@ public class OreBlob extends AbstractEntityAnimation {
                 world.moveEntity(this, nextPos);
             }
             return false;
+
         }
     }
 
@@ -75,14 +95,15 @@ public class OreBlob extends AbstractEntityAnimation {
         Optional<Entity> occupant = world.getOccupant(newPos);
 
         if (horiz == 0 ||
-                (occupant.isPresent() && !(occupant.get() instanceof Ore)))
+                (occupant.isPresent() && !(occupant.get().instanceCheck(new Ore(null, null, 0, null)))))
         {
             int vert = Integer.signum(destPos.y - this.getPosition().y);
             newPos = new Point(this.getPosition().x, this.getPosition().y + vert);
             occupant = world.getOccupant(newPos);
 
             if (vert == 0 ||
-                    (occupant.isPresent() && !(occupant.get() instanceof Ore)))
+                    //occupant.get() instanceof Ore
+                    (occupant.isPresent() && !(occupant.get().instanceCheck(new Ore(null, null, 0, null)))))
             {
                 newPos = this.getPosition();
             }

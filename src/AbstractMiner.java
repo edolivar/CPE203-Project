@@ -10,6 +10,7 @@ public abstract class AbstractMiner extends AbstractEntityAnimation{
         super(id, resourceLimit, position, actionPeriod, animationPeriod, images);
     }
 
+    /*
     protected Point nextPositionMiner(WorldModel world,
                                    Point destPos) {
         int horiz = Integer.signum(destPos.x - this.getPosition().x);
@@ -27,6 +28,7 @@ public abstract class AbstractMiner extends AbstractEntityAnimation{
         }
         return newPos;
     }
+    */
 
 
 }

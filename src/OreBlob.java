@@ -62,11 +62,6 @@ public class OreBlob extends AbstractEntityAnimation {
             if (path.size() != 0) {
                 nextPos = path.get(0);
             }
-            /*
-            else {
-                return false;
-            }
-            */
 
             //Point nextPos = nextPositionOreBlob(world, target.getPosition());
             //!this.getPosition().equals(nextPos)
@@ -85,6 +80,7 @@ public class OreBlob extends AbstractEntityAnimation {
         }
     }
 
+    /*
     public Point nextPositionOreBlob(WorldModel world,
                                      Point destPos)
     {
@@ -111,6 +107,7 @@ public class OreBlob extends AbstractEntityAnimation {
 
         return newPos;
     }
+    */
 
     public Boolean instanceCheck (Entity e) {
         return e.accept(new OreBlobEntityVisitor());

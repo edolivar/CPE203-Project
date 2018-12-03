@@ -19,17 +19,22 @@ public class AstarPathingStrategy implements PathingStrategy {
         List<Node> closedList = new LinkedList<>();
         List<Point> path = new LinkedList<>();
 
+        // currentNode begins at starting point
         Node currentNode = new Node(null, 0, start.distanceSquared(end), start);
         openList.add(currentNode);
 
+        // stop when target is in reach
         while (!withinReach.test(currentNode.getPosition(), end)) {
 
+            // get all positions nearby that are WITHIN BOUNDS and are not occupied by something
             List<Point> adjacentPositions = potentialNeighbors.apply(currentNode.getPosition())
                     .filter(canPassThrough)
                     .collect(Collectors.toList());
 
             List<Node> children = new LinkedList<>();
 
+            // Turn adjacent points into nodes so long as they are not in
+            // the closedList (nodes that are already explored)
             for (Point pos : adjacentPositions) {
                 Node newChildNode = new Node(currentNode, currentNode.getG() + 1, pos.distanceSquared(end), pos);
                 boolean inClosedList = false;
@@ -43,6 +48,7 @@ public class AstarPathingStrategy implements PathingStrategy {
                 }
             }
 
+            // Add child node to openList if it's not in already.
             for (Node child : children) {
                 boolean inOpenList = false;
                 for (Node openNode : openList) {
@@ -53,6 +59,8 @@ public class AstarPathingStrategy implements PathingStrategy {
                 if (!inOpenList) {
                     openList.add(child);
                 }
+                // Now, if a a node with the same position exists in openList but the childNode
+                // is a more efficient node, replace the node with the better one
                 for (Node openNode : openList) {
                     if (openNode.getG() > child.getG() && openNode.getPosition().equals(child.getPosition())) {
                         openNode.setG(child.getG());
@@ -62,9 +70,11 @@ public class AstarPathingStrategy implements PathingStrategy {
                     }
                 }
             }
+            // add currentNode to closedList (fully explored) and pop currentNode from openList
             closedList.add(currentNode);
             openList.remove(currentNode);
 
+            // If openList is not empty, reorganize it such that the node with the smallest F is at index 0
             if (!openList.isEmpty()) {
                 openList = openList.stream()
                         //f = g + h, where g is distance between current node and start node and
@@ -75,105 +85,22 @@ public class AstarPathingStrategy implements PathingStrategy {
 
                 currentNode = openList.get(0);
             }
+            // if it's empty,
             else {
                 return path;
             }
         }
+        // we are adjacent to the target. Build path (always insert at 0 to avoid reversing)
+        // from trail of node parents
         while (currentNode.getParent() != null) {
             path.add(0, currentNode.getPosition());
             currentNode = currentNode.getParent();
         }
 
+        // truncate the list so that there's only one point (the next point)
         path = path.stream()
                 .limit(1)
                 .collect(Collectors.toList());
         return path;
     }
 }
-
-
-//            /*
-//            openList = openList.stream()
-//                    //f = g + h, where g is distance between current node and start node and
-//                    //h is the distance from current node to end node
-//                    //Comparator.comparingDouble((point) -> point.distanceSquared(start) + point.distanceSquared(end))
-//                    .sorted(Comparator.comparing(Node::getF))
-//                    .collect(Collectors.toList());
-//                    */
-//
-////            for (Node n : openList) {
-////                double d = n.getPosition().distanceSquared(end);
-////                double somethinElse = d;
-////            }
-//
-//            //currentNode = openList.get(0);
-//            double distance = lowestFCost.getPosition().distanceSquared(end);
-//            closedList.add(lowestFCost);
-//            openList.remove(0);
-//
-//            if (withinReach.test(lowestFCost.getPosition(), end)) {
-//                Node current = lowestFCost;
-//                while (current != null) {
-//                    path.add(current.getPosition());
-//                    current = current.getParent();
-//                }
-//                long count = path.stream().count();
-//                path = path.stream()
-//                        .skip(count - 2)
-//                        .limit(1)
-//                        .collect(Collectors.toList());
-//                return path;
-//
-//            }
-//            else {
-//                List<Point> adjacentPositions = potentialNeighbors.apply(lowestFCost.getPosition())
-//                        .filter(canPassThrough)
-//                        /*
-//                        .filter(pt ->
-//                                !pt.equals(start)
-//                                        && !pt.equals(end)
-//                                        && Math.abs(end.x - pt.x) <= Math.abs(end.x - start.x)
-//                                        && Math.abs(end.y - pt.y) <= Math.abs(end.y - start.y))
-//                                        */
-//                        .collect(Collectors.toList());
-//
-//                List<Node> children = new LinkedList<>();
-//
-//                for (Point pos : adjacentPositions) {
-//                    children.add(new Node(lowestFCost, pos));
-//                }
-//
-//                for (Node child : children) {
-//                    boolean inClosedList = false;
-//
-//                    for (Node closedChild : closedList) {
-//                        if (child.equals(closedChild)) {
-//                            inClosedList = true;
-//                        }
-//                    }
-//
-//                    if (!inClosedList) {
-//                        double distanceToEnd = child.getPosition().distanceSquared(end);
-//                        double gCost = lowestFCost.getG() + 1;
-//                        child.setG(lowestFCost.getG() + 1);
-//                        child.setH(distanceToEnd);
-//                        child.setF(child.getG() + child.getH());
-//
-//                        for (Node openNode : openList) {
-//                            if (child.equals(openNode) && child.getG() > openNode.getG()) {
-//                                continue;
-//                            }
-//                        }
-//
-//                        openList.add(child);
-//                    }
-//                }
-//            }
-//
-//        }
-//
-//        List<Point> emptyList = new LinkedList<>();
-//        return emptyList;
-//    }
-
-//}

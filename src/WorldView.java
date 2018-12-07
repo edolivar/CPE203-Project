@@ -21,6 +21,10 @@ final class WorldView
       this.viewport = new Viewport(numRows, numCols);
    }
 
+   public Viewport getViewport() {
+      return this.viewport;
+   }
+
    public void drawViewport()
    {
       this.drawBackground();

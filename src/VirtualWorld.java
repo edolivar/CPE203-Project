@@ -106,6 +106,42 @@ public final class VirtualWorld
       }
    }
 
+   public void mouseClicked() {
+      int tileX = (int)mouseX/TILE_WIDTH;
+      int tileY = (int)mouseY/TILE_HEIGHT;
+      int currentTileX = tileX + view.getViewport().getCol();
+      int currentTileY = tileY + view.getViewport().getRow();
+      Point tile = new Point(currentTileX, currentTileY);
+      String destroyedGround = "destroyedGround";
+      Background destroyed = new Background(destroyedGround, imageStore.getImageList(destroyedGround));
+      world.setBackground(tile, destroyed);
+      world.setBackground(new Point(tile.x + 1, tile.y), destroyed);
+      world.setBackground(new Point(tile.x - 1, tile.y), destroyed);
+      world.setBackground(new Point(tile.x, tile.y + 1), destroyed);
+      world.setBackground(new Point(tile.x, tile.y - 1), destroyed);
+      world.setBackground(new Point(tile.x + 1, tile.y + 1), destroyed);
+      world.setBackground(new Point(tile.x - 1, tile.y + 1), destroyed);
+      world.setBackground(new Point(tile.x + 1, tile.y - 1), destroyed);
+      world.setBackground(new Point(tile.x - 1, tile.y - 1), destroyed);
+      world.setBackground(new Point(tile.x, tile.y + 2), destroyed);
+      world.setBackground(new Point(tile.x + 2, tile.y), destroyed);
+      world.setBackground(new Point(tile.x, tile.y - 2), destroyed);
+      world.setBackground(new Point(tile.x - 2, tile.y), destroyed);
+      world.setBackground(new Point(tile.x - 2, tile.y + 1), destroyed);
+      world.setBackground(new Point(tile.x - 1, tile.y + 2), destroyed);
+      world.setBackground(new Point(tile.x, tile.y + 3), destroyed);
+      world.setBackground(new Point(tile.x + 2, tile.y + 1), destroyed);
+      world.setBackground(new Point(tile.x + 1, tile.y + 2), destroyed);
+      world.setBackground(new Point(tile.x + 3, tile.y), destroyed);
+      world.setBackground(new Point(tile.x - 2, tile.y - 1), destroyed);
+      world.setBackground(new Point(tile.x - 1, tile.y - 2), destroyed);
+      world.setBackground(new Point(tile.x, tile.y - 3), destroyed);
+      world.setBackground(new Point(tile.x + 2, tile.y - 1), destroyed);
+      world.setBackground(new Point(tile.x + 1, tile.y - 2), destroyed);
+      world.setBackground(new Point(tile.x - 3, tile.y), destroyed);
+      //System.out.printf("%d, %d\n%d, %d\n%d, %d\n", mouseX, mouseY, tileX, tileY, currentTileX, currentTileY);
+   }
+
    public static Background createDefaultBackground(ImageStore imageStore)
    {
       return new Background(DEFAULT_IMAGE_NAME,

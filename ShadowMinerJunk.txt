@@ -1,0 +1,67 @@
+    public void executeActivity(WorldModel world,
+                                ImageStore imageStore, EventScheduler scheduler)
+    {
+        Optional<Entity> fullTarget = world.findNearest(this.getPosition(),
+                new Blacksmith(null, null, null));
+        long nextPeriod = this.getActionPeriod();
+
+        if (fullTarget.isPresent() &&
+                this.moveToFull(world, fullTarget.get(), scheduler))
+        {
+            Quake quake = new Quake(fullTarget.get().getPosition(),
+                    imageStore.getImageList("quake"));
+
+            world.addEntity(quake);
+            nextPeriod += this.getActionPeriod();
+            quake.scheduleActions(scheduler, world, imageStore);
+        }
+        else
+        {
+            scheduler.scheduleEvent(this,
+                    new Activity(this, world, imageStore),
+                    nextPeriod);
+        }
+    }
+
+    public boolean moveToFull(WorldModel world,
+                              Entity target, EventScheduler scheduler)
+    {
+        //getPosition()
+        if (adjacent(this.getPosition(), target.getPosition()))
+        {
+            world.removeEntity(target);
+            scheduler.unscheduleAllEvents(target);
+            return true;
+        }
+        else
+        {
+            //getPosition()
+            //Point nextPos = this.nextPositionMiner(world, target.getPosition());
+            AstarPathingStrategy singleStep = new AstarPathingStrategy();
+            Predicate<Point> canPassThrough = (point) -> world.withinBounds(point) && !world.isOccupied(point);
+            BiPredicate<Point, Point> withinReach = (point1, point2) -> adjacent(point1, point2);
+
+            List<Point> path = singleStep.computePath(this.getPosition(), target.getPosition(), canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);
+            Point nextPos = null;
+            if (path.size() != 0) {
+                nextPos = path.get(0);
+            }
+            /*
+            else {
+                return false;
+            }
+            */
+
+            if (nextPos != null)
+            {
+                Optional<Entity> occupant = world.getOccupant(nextPos);
+                if (occupant.isPresent())
+                {
+                    scheduler.unscheduleAllEvents(occupant.get());
+                }
+
+                world.moveEntity(this, nextPos);
+            }
+            return false;
+        }
+    }

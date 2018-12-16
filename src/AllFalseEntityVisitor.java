@@ -32,4 +32,9 @@ public class AllFalseEntityVisitor implements EntityVisitor<Boolean> {
         return false;
     }
 
+    public Boolean visit(ShadowMage shadowMage) { return false; }
+
+    public Boolean visit(ShadowMiner shadowMiner) { return false;
+    }
+
 }

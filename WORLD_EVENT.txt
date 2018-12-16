@@ -1,0 +1,32 @@
+
+
+1) To trigger the event, click anywhere on the screen.
+
+2) When the event has been triggered, whatever
+   entity at the point that you clicked will be removed,
+   and at that point will be spawned a Shadow Mage. Along
+   with this shadow mage will be a large radius of purple
+   slime that spawns with the mage. After the mage and all
+   of his slime has spawned, he will go on a rampage to infect
+   every MinerNotFull that he can find. The Shadow Mage is 
+   the fastest entity in the world, and only thirsts for the blood
+   of MinerNotFulls. Wherever the mage goes, he will leave a
+   trail of purple slime behind him, making his path very clear.
+
+3) The infected MinerNotFulls become the Shadow Mage's zombie slaves.
+   They are called Shadow Miners (really original, right?). These are
+   the slowest entities in the world. Once infected, these Shadow
+   Miners will morph into a purple-ish version of the original
+   Miner (which sucked to draw 5 times), and will very slowly seek out
+   every available Blacksmith it can. When it finds a blacksmith, it
+   will kill it. It only seeks Blacksmiths, doesn't care about anything
+   else, and will kill and remove the Blacksmiths as soon as they can.
+   The Shadow Miner's only goal in life is to ruin the game for everyone
+   else in their merciless rampage.
+
+4) The new entity, the ShadowMage, will go around at the fastest pace
+   infecting MinerNotFulls. It doesn't care for blobs or anything else,
+   all it wants to do is build an army of zombie MinerNotFulls. Once it
+   has infected every possible MinerNotFull it can find, it will stop
+   moving and look upon his epic army. He leaves a trail of slime, as
+   mentioned before, wherever he goes.

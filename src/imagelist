@@ -29,3 +29,10 @@ quake images/quake6.bmp 255 255 255 0
 rocks images/rock.bmp
 vein images/vein.bmp
 background_default images/none.bmp
+shadowMage images/shadow_mage.png
+freeze images/freeze4.bmp
+shadowMiner images/shadow_miner0.png
+shadowMiner images/shadow_miner1.png
+shadowMiner images/shadow_miner2.png
+shadowMiner images/shadow_miner3.png
+shadowMiner images/shadow_miner4.png

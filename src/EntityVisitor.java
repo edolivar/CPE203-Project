@@ -1,3 +1,5 @@
+import javafx.scene.effect.Shadow;
+
 public interface EntityVisitor<R> {
 
         R visit(Blacksmith blacksmith);
@@ -8,5 +10,7 @@ public interface EntityVisitor<R> {
         R visit(OreBlob oreBlob);
         R visit(Quake quake);
         R visit(Vein vein);
+        R visit(ShadowMage shadowMage);
+        R visit(ShadowMiner shadowMiner);
 
 }

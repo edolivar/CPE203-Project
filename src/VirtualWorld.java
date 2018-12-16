@@ -35,7 +35,7 @@ public final class VirtualWorld
 
    private static double timeScale = 1.0;
 
-   private ImageStore imageStore;
+   public static ImageStore imageStore;
    private WorldModel world;
    private WorldView view;
    private EventScheduler scheduler;
@@ -107,6 +107,8 @@ public final class VirtualWorld
    }
 
    public void mouseClicked() {
+      //#ff4081
+      //#6a1b9a
       int tileX = (int)mouseX/TILE_WIDTH;
       int tileY = (int)mouseY/TILE_HEIGHT;
       int currentTileX = tileX + view.getViewport().getCol();
@@ -119,14 +121,14 @@ public final class VirtualWorld
       world.setBackground(new Point(tile.x - 1, tile.y), destroyed);
       world.setBackground(new Point(tile.x, tile.y + 1), destroyed);
       world.setBackground(new Point(tile.x, tile.y - 1), destroyed);
-      world.setBackground(new Point(tile.x + 1, tile.y + 1), destroyed);
-      world.setBackground(new Point(tile.x - 1, tile.y + 1), destroyed);
-      world.setBackground(new Point(tile.x + 1, tile.y - 1), destroyed);
-      world.setBackground(new Point(tile.x - 1, tile.y - 1), destroyed);
-      world.setBackground(new Point(tile.x, tile.y + 2), destroyed);
-      world.setBackground(new Point(tile.x + 2, tile.y), destroyed);
-      world.setBackground(new Point(tile.x, tile.y - 2), destroyed);
-      world.setBackground(new Point(tile.x - 2, tile.y), destroyed);
+      //world.setBackground(new Point(tile.x + 1, tile.y + 1), destroyed);
+      //world.setBackground(new Point(tile.x - 1, tile.y + 1), destroyed);
+      //world.setBackground(new Point(tile.x + 1, tile.y - 1), destroyed);
+      //world.setBackground(new Point(tile.x - 1, tile.y - 1), destroyed);
+      //world.setBackground(new Point(tile.x, tile.y + 2), destroyed);
+      //world.setBackground(new Point(tile.x + 2, tile.y), destroyed);
+      //world.setBackground(new Point(tile.x, tile.y - 2), destroyed);
+      //world.setBackground(new Point(tile.x - 2, tile.y), destroyed);
       world.setBackground(new Point(tile.x - 2, tile.y + 1), destroyed);
       world.setBackground(new Point(tile.x - 1, tile.y + 2), destroyed);
       world.setBackground(new Point(tile.x, tile.y + 3), destroyed);
@@ -139,6 +141,12 @@ public final class VirtualWorld
       world.setBackground(new Point(tile.x + 2, tile.y - 1), destroyed);
       world.setBackground(new Point(tile.x + 1, tile.y - 2), destroyed);
       world.setBackground(new Point(tile.x - 3, tile.y), destroyed);
+      world.removeEntityAt(tile);
+      //scheduler.unscheduleAllEvents(tile);
+      String shadowMage = "shadowMage";
+      ShadowMage mainShadow = new ShadowMage(shadowMage, tile, 1000, 0, imageStore.getImageList(shadowMage));
+      world.addEntity(mainShadow);
+      mainShadow.scheduleActions(scheduler, world, imageStore);
       //System.out.printf("%d, %d\n%d, %d\n%d, %d\n", mouseX, mouseY, tileX, tileY, currentTileX, currentTileY);
    }
 
